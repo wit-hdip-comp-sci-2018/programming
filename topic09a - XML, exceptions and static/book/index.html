@@ -1,0 +1,619 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+       9a: Persistence (XML & Exceptions)
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-05">
+      Lab-05
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item" href="../../topic00-assignments/book-assignment-1/index.html">
+          Assignment-1
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic00-assignments/book-assignment-2/index.html">
+          Assignment2
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01a-intro-to-processing/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01b-animate-your-drawings/book-1/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01b-animate-your-drawings/book-2/index.html">
+          Code to Download
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic02a-if-stmt-and-events/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03a-methods/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03b-more-on-methods/book/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04a-strings-and-intro-to-classes/book/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04b-classes-encapsulation/book-1/index.html">
+          Lab-10
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05a-arrays/book-1/index.html">
+          Lab-11a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05a-arrays/book-2/index.html">
+          Lab-9b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-1/index.html">
+          Lab-11c
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-2/index.html">
+          Lab-12a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-3/index.html">
+          Lab-12b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-4/index.html">
+          Lab-12c
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07a - IntelliJ, JVM and IO/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07b - grouping objects/book-1/index.html">
+          Lab-02a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07b - grouping objects/book-2/index.html">
+          Lab-02b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08a - arraylist and menus/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08b - persistence/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic09a - XML, exceptions and static/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic09b - collections/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic10a - inheritance and polymorphism/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic10b - abstraction and debugging/book/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic11 - TDD and JUnit/book/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic12 - abstraction and interfaces/book/index.html">
+          Lab-10
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-05">
+        <h1>Objectives</h1>
+<p>On completion of this lab you should be able to:</p>
+<ul>
+<li><p>Store objects into XML files and retrieve them from XML files (using ShopV4.0 as a starting point).</p>
+</li>
+<li><p>Apply this XML knowledge to another domain i.e. the DVD library.</p>
+</li>
+<li><p>Include Exception handling for invalid user input.</p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Developing Shop V5.0</h1>
+<p>In this practical, you will create a new project called ShopV5.0 in Eclipse, based on ShopV4.0.  You will update the Driver, Store and Product classes (linked below) to enable the user to save the products to an XML file and also reload them (see Figure 1 for the updated menu system).</p>
+<p><img src="./img/00.png" alt="Figure 1: Menu System for ShopV5.0"> </p>
+<h2>Menu Items 9 and 10:  Saving and Loading Products</h2>
+<ul>
+<li><p>Create a new project called ShopV5.0.</p>
+</li>
+<li><p>Copy the following classes into the project:</p>
+<ul>
+<li><p><a href="archives/Driver.java">Driver.java</a></p>
+</li>
+<li><p><a href="archives/Store.java">Store.java</a></p>
+</li>
+<li><p><a href="archives/Product.java">Product.java</a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Setting up the Component for Serializing</h2>
+<p>Download the following XStream jar file:</p>
+<ul>
+<li><a href="archives/xstream-1.4.8.jar">xstream-1.4.8.jar</a> </li>
+</ul>
+<p>In Eclipse Package Explorer, create a new folder &quot;lib&quot;. Do this be selecting the project, select &quot;File-&gt;New-&gt;Folder&quot;. In the offered dialog, enter &quot;lib&quot; as the file name. Drag the xstream.jar file already downloaded into the lib folder (choose the option to copy the file).  Your workspace should look like this:</p>
+<p><img src="img/xml01.png" alt=""></p>
+<p>Right click on the xstream-1.4.8.jar file and select &quot;Build Path-&gt;Add to Build Path&quot;. Workspace should now look like this:</p>
+<p><img src="img/xml02.png" alt=""></p>
+<h2>Updating Store Class to serialize and deserialize products</h2>
+<p>In the Store class, create these two new methods:</p>
+<pre><code class="lang-java">    @SuppressWarnings(&quot;unchecked&quot;)
+    public void load() throws Exception
+    {
+        XStream xstream = new XStream(new DomDriver());
+        ObjectInputStream is = xstream.createObjectInputStream(new FileReader(&quot;products.xml&quot;));
+        products = (ArrayList&lt;Product&gt;) is.readObject();
+        is.close();
+    }
+
+    public void save() throws Exception
+    {
+        XStream xstream = new XStream(new DomDriver());
+        ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter(&quot;products.xml&quot;));
+        out.writeObject(products);
+        out.close();    
+    }</code></pre>
+<p>You will notice that they don&#39;t compile; they are missing some needed packages.  Import the following packages at the top of the store class:</p>
+<pre><code class="lang-java">import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;</code></pre>
+<h2>Adding load and save functionality to the menu</h2>
+<ul>
+<li>In the Driver class, add options 9 and 10 to the printed menu:</li>
+</ul>
+<p><img src="./img/03.png" alt="Figure 4: Menu System code for Shop V5.0"> </p>
+<ul>
+<li>In the Driver class, make the following changes to implement case 9 and 10: </li>
+</ul>
+<p><img src="./img/04.png" alt="Figure 5: Code for case 9 and 10"> </p>
+<h2>Testing the load and store</h2>
+<p>You should be in a position now to test.</p>
+<p>Start your app and create two products e.g.</p>
+<pre><code>Please enter the product description: 24 inch monitor
+Please enter the product code: 3423
+Please enter the product cost: 129.99
+Is this product in your current line (y/n): y
+
+Please enter the product description: 14 inch monitor
+Please enter the product code: 2322
+Please enter the product cost: 109.99
+Is this product in your current line (y/n): y</code></pre>
+<p>Now try option 9 to save your products.  </p>
+<p>Refresh the package view in eclipse (F5) and you should now see a products.xml file.  </p>
+<p>Open this file and it should contain something similar to this:</p>
+<pre><code class="lang-xml">&lt;object-stream&gt;
+  &lt;list&gt;
+    &lt;Product&gt;
+      &lt;productName&gt;24 inch monitor&lt;/productName&gt;
+      &lt;productCode&gt;3423&lt;/productCode&gt;
+      &lt;unitCost&gt;129.99&lt;/unitCost&gt;
+      &lt;inCurrentProductLine&gt;true&lt;/inCurrentProductLine&gt;
+    &lt;/Product&gt;
+    &lt;Product&gt;
+      &lt;productName&gt;14 inch monitor&lt;/productName&gt;
+      &lt;productCode&gt;2322&lt;/productCode&gt;
+      &lt;unitCost&gt;109.99&lt;/unitCost&gt;
+      &lt;inCurrentProductLine&gt;true&lt;/inCurrentProductLine&gt;
+    &lt;/Product&gt;
+  &lt;/list&gt;
+&lt;/object-stream&gt;</code></pre>
+<ul>
+<li><p>Exit your application and run it again.</p>
+</li>
+<li><p>Test option 10 and make sure that your products are loaded back into your products ArrayList correctly.</p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Shop V5.0 - Exceptions</h1>
+<p>In this practical, you will continue working on Shop V5.0. </p>
+<h2>Adding Exception Handling</h2>
+<ul>
+<li><p>In the Driver class, put a try and catch block around each potential read of data that could throw an exception (nextLine and next are ok).</p>
+</li>
+<li><p>Revisit your lecture notes on this topic if you need guidance.</p>
+</li>
+<li><p>Run your program and test your user input to ensure that your exception handling is correctly implemented.</p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>Menu Driven DVD Specification (Phase 3)</h1>
+<p>In this practical, you will create a new project in Eclipse and copy in the code from <strong>DVDLibraryV2.0</strong>.  You will then extend the code to allow the user to save the DVDs to an XML file and to load the DVDs from an XML file. </p>
+<ul>
+<li><p>Create a new project called <strong>DVDLibraryV3.0</strong>.</p>
+</li>
+<li><p>In your Windows Explorer / Mac Finder, copy the <strong>src</strong> java files from <strong>DVDLibraryV2.0</strong> to the <strong>src</strong> folder in your new project,  <strong>DVDLibraryV3.0</strong>.</p>
+</li>
+<li><p>NOTE:  a copy of the completed <strong>DVDLibraryV2.0</strong> <a href="archives/DVDLibraryV2.0.zip">is available here</a>.</p>
+</li>
+</ul>
+<h2>Setting up the Component for Serializing</h2>
+<p>Download the following XStream jar file:</p>
+<ul>
+<li><a href="../book/archives/xstream-1.4.8.jar">xstream-1.4.8.jar</a> </li>
+</ul>
+<p>In Eclipse Package Explorer, create a new folder &quot;lib&quot;. Do this be selecting the project, select &quot;File-&gt;New-&gt;Folder&quot;. In the offered dialog, enter &quot;lib&quot; as the file name. Drag the xstream.jar file already downloaded into the lib folder (choose the option to copy the file).</p>
+<p>Right click on xstream-1.4.8.jar and select &quot;Build Path-&gt;Add to Build Path&quot;.</p>
+<h2>Library class</h2>
+<ul>
+<li><p>In the Library class:</p>
+<ul>
+<li><p>add a load() method that throws an Exception.  This method should read the contents of the dvd.xml file into the ArrayList of DVDs.</p>
+</li>
+<li><p>add a save() method that throws an Exception.  This method should write the contents of the ArrayList of DVDs to the dvd.xml file.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Driver class - Save DVDs</h2>
+<ul>
+<li><p>Add a fifth option to the menu:  5) Save DVDs to dvds.xml.</p>
+</li>
+<li><p>within a try and catch block, call the save() method you wrote in the Library class.</p>
+</li>
+</ul>
+<h2>Driver class - Load DVDs</h2>
+<ul>
+<li><p>Add a sixth option to the menu:  6) Load DVDs from dvds.xml.</p>
+</li>
+<li><p>within a try and catch block, call the load() method you wrote in the Library class.</p>
+</li>
+</ul>
+<h2>Test your code</h2>
+<ul>
+<li><p>Run the project (as a Java Application).</p>
+</li>
+<li><p>Test option 5 and make sure that your DVDs are stored to an XML file.  </p>
+</li>
+<li><p>You should have a new XML file that looks like this:</p>
+</li>
+</ul>
+<pre><code class="lang-XML">&lt;object-stream&gt;
+  &lt;list&gt;
+    &lt;DVD&gt;
+      &lt;title&gt;The Matrix&lt;/title&gt;
+    &lt;/DVD&gt;
+    &lt;DVD&gt;
+      &lt;title&gt;Sicario&lt;/title&gt;
+    &lt;/DVD&gt;
+    &lt;DVD&gt;
+      &lt;title&gt;The Grinch&lt;/title&gt;
+    &lt;/DVD&gt;
+  &lt;/list&gt;
+&lt;/object-stream&gt;</code></pre>
+<ul>
+<li><p>Exit your application and run it again.</p>
+</li>
+<li><p>Test option 6 and make sure that your DVDs are loaded back into your dvd ArrayList correctly.</p>
+</li>
+</ul>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Solutions</h1>
+<p>The solution to the ShopV5.0 exercise <a href="archives/ShopV5.0.zip">is here</a>.</p>
+<p>The solution to DVD phase 3 <a href="archives/DVDLibraryV3.0.zip">is here</a>.</p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>

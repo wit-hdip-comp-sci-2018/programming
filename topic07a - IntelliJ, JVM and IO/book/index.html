@@ -1,0 +1,707 @@
+ <!DOCTYPE html>
+ <html>
+   <head>
+
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+     <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
+   </head>
+
+  <body>
+    
+
+<style>
+  
+
+code
+{
+  font-family: "Monaco";
+  font-size: 110%;
+}
+
+img
+{
+  padding:1px;
+  border:1px solid black;
+}
+
+h1
+{
+  font-style:italic;
+  font-size:130%;
+  border-bottom:thin solid black;
+}
+
+h2
+{
+  font-size:110%;
+  border-bottom: thin solid black;
+}
+
+h3
+{
+  font-size:100%;
+  border-bottom: thin solid black;
+}
+
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+       7: IntelliJ and Basic I/O
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-01">
+      Lab-01
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="05">
+      05
+    </a>
+    
+    <a class="item" data-tab="06">
+      06
+    </a>
+    
+    <div class="item">
+      
+    </div>
+  </div>
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item" href="../../topic00-assignments/book-assignment-1/index.html">
+          Assignment-1
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic00-assignments/book-assignment-2/index.html">
+          Assignment2
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01a-intro-to-processing/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01b-animate-your-drawings/book-1/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01b-animate-your-drawings/book-2/index.html">
+          Code to Download
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02a-if-stmt-and-events/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03a-methods/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03b-more-on-methods/book/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04a-strings-and-intro-to-classes/book/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic04b-classes-encapsulation/book-1/index.html">
+          Lab-10
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05a-arrays/book-1/index.html">
+          Lab-11a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic05a-arrays/book-2/index.html">
+          Lab-9b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-1/index.html">
+          Lab-11c
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-2/index.html">
+          Lab-12a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-3/index.html">
+          Lab-12b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic06-pong/book-4/index.html">
+          Lab-12c
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic07a - IntelliJ, JVM and IO/book/index.html">
+          Lab-01
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07b - grouping objects/book-1/index.html">
+          Lab-02a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic07b - grouping objects/book-2/index.html">
+          Lab-02b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08a - arraylist and menus/book/index.html">
+          Lab-03
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic08b - persistence/book/index.html">
+          Lab-04
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic09a - XML, exceptions and static/book/index.html">
+          Lab-05
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic09b - collections/book/index.html">
+          Lab-06
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic10a - inheritance and polymorphism/book/index.html">
+          Lab-07
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic10b - abstraction and debugging/book/index.html">
+          Lab-08
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic11 - TDD and JUnit/book/index.html">
+          Lab-09
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic12 - abstraction and interfaces/book/index.html">
+          Lab-10
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-01">
+        <h1>Objectives</h1>
+<p>In this lab, you will explore the Eclipse IDE, use the main method as the starting point for your applications and read in various data types from the console using the Scanner class.  You will also recap writing encapsulated classes.</p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Installing Eclipse</h1>
+<ul>
+<li><p>If you are using your own laptop and would like to install Eclipse on it, please follow the instructions in this step.</p>
+</li>
+<li><p>If you are using the WIT computers, you can ignore this step and move onto the next step.</p>
+</li>
+</ul>
+<h2>Downloading Eclipse</h2>
+<ul>
+<li><p>Eclipse can be downloaded from <a href="http://www.eclipse.org/downloads/eclipse-packages/">http://www.eclipse.org/downloads/eclipse-packages/</a>.  It is free.</p>
+</li>
+<li><p>Scroll down and choose the build...Eclipse IDE for Java Developers:</p>
+</li>
+</ul>
+<p><img src="./img/02.PNG" alt="Eclipse IDE for Java Developers"></p>
+<ul>
+<li>Select a mirror of your choice:</li>
+</ul>
+<p><img src="./img/03.PNG" alt="Choose a mirror"></p>
+<ul>
+<li><p>A zip file will start to download.  When this file has downloaded:</p>
+<ul>
+<li><p>Decide where you are going to store your Programming applications on your computer.   It is a good idea to create a folder called <strong>dev</strong> on your <strong>C drive</strong> and store all your applications in there.</p>
+</li>
+<li><p>Unzip the downloaded zip file to your chosen location.  Note: if you don’t have unzipping software, 7-zip is a good choice and can be downloaded from here: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a>.</p>
+</li>
+<li><p>You should now have a folder structure resembling this picture:</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="./img/04.PNG" alt="Eclipse application"></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Launching Eclipse</h1>
+<ul>
+<li><p>Open Windows Explorer by holding down the windows key and pressing the letter E once. </p>
+</li>
+<li><p>Navigate to where the Eclipse application is stored (if using the college computers, it should be in the <strong>dev</strong> folder).</p>
+</li>
+<li><p>You should see a list of files and folders similiar to the picture below:</p>
+</li>
+</ul>
+<p><img src="./img/05.PNG" alt="The Eclipse Application"></p>
+<ul>
+<li><p>Double click in the <strong>Eclipse</strong> application (highlighted).</p>
+</li>
+<li><p>Eclipse should launch and you will be asked to select the location of your workspace.</p>
+</li>
+</ul>
+<p><img src="./img/06.PNG" alt="Selecting your workspace"></p>
+<ul>
+<li><p>If you are using the college computers, choose a location on OneDrive or your USB drive. </p>
+</li>
+<li><p>If you are using your own laptop, choose a location that you find convenient.</p>
+</li>
+<li><p>Eclipse will now open.  Click x to close the welcome page.  You will have a view similar to this:</p>
+</li>
+</ul>
+<p><img src="./img/07.PNG" alt="Eclipse Application"></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>HelloWorld App</h1>
+<ul>
+<li><p>Now that you have successfully launched Eclipse, we will write a basic &quot;Hello World&quot; app to test it.</p>
+</li>
+<li><p>Select the following options to create a new Java Project:</p>
+</li>
+</ul>
+<p><img src="./img/08.PNG" alt="Creating a new Java Project"></p>
+<ul>
+<li>When the <strong>New Java Project</strong> window appear, enter the project name <strong>Hello World</strong> and click the <strong>Finish</strong> button.</li>
+</ul>
+<p><img src="./img/09.PNG" alt="New Java Project Window"></p>
+<ul>
+<li>You should have a directory structure like this:</li>
+</ul>
+<p><img src="./img/10.PNG" alt="HelloWorld directory structure"></p>
+<ul>
+<li>To create a new Java class, right click on the <strong>src</strong> folder and select <strong>New</strong> followed by <strong>Class</strong> from the context menu.</li>
+</ul>
+<p><img src="./img/11.PNG" alt="Creating a new Java Class"></p>
+<ul>
+<li>When the <strong>New Java Class</strong> window appear, enter the class name <strong>HelloWorld</strong> and click the <strong>Finish</strong> button.</li>
+</ul>
+<p><img src="./img/12.PNG" alt="New Java Class Window"></p>
+<ul>
+<li>The following class will be created:</li>
+</ul>
+<p><img src="./img/13.PNG" alt="HelloWorld Class"></p>
+<ul>
+<li>Add a main method to this class that simply prints the text <strong>Hello World</strong> to the console:</li>
+</ul>
+<p><img src="./img/14.PNG" alt="HelloWorld Class with main method"></p>
+<ul>
+<li>To run your Java program right click on the &quot;HelloWorld&quot; class (it contains the main method) and select <strong>Run AS</strong> followed by <strong>Java Application</strong> from the context menu.</li>
+</ul>
+<p><img src="./img/15.PNG" alt="Running the Hello World app"></p>
+<ul>
+<li>The Console window should appear and the text <strong>Hello World</strong> should be displayed.</li>
+</ul>
+<p><img src="./img/16.PNG" alt="Console Window with output"></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>ShopV1.0</h1>
+<ul>
+<li><p>This console based app will ask the user to enter details for one Product.  The details of the product will be printed back to the user. </p>
+</li>
+<li><p>During this step, you may need to view this weeks lecture notes to remind you how to write classes.</p>
+</li>
+<li><p>In Eclipse, create a new Java Project called ShopV1.0.</p>
+</li>
+<li><p>Within this project, create two new Classes; Product and Driver.</p>
+</li>
+<li><p>Your folder structure should look like this:</p>
+</li>
+</ul>
+<p><img src="./img/17.PNG" alt="ShopV1.0 folder structure"></p>
+<h2>Product Class</h2>
+<ul>
+<li><p>In the Product class, create four private instance fields:</p>
+<ul>
+<li>productName of type String</li>
+<li>productCode of type int</li>
+<li>unitCost of type double</li>
+<li>inCurrentProductLine of type boolean</li>
+</ul>
+</li>
+<li><p>Write a constructor for this class that takes the four instance fields as parameters and updates the object state using these parameters.  Note: no need for field validation yet.</p>
+</li>
+<li><p>Write a getter for each instance field.  </p>
+</li>
+<li><p>Write a setter for each instance field.  Note: no need for field validation yet.</p>
+</li>
+<li><p>Write a toString method that builds and returns a String comprising a user friendly representation of the object state.</p>
+</li>
+</ul>
+<h2>Driver Class</h2>
+<ul>
+<li><p>In the Driver class, create two private instance fields:</p>
+<ul>
+<li>input of type Scanner</li>
+<li>product of type Product</li>
+</ul>
+</li>
+<li><p>Write a default constructor (no parameters) for this class that creates a new Scanner object and assigns it to the input field i.e.</p>
+</li>
+</ul>
+<pre><code>    input = new Scanner(System.in);</code></pre>
+<ul>
+<li>Write a method called <strong>addProduct()</strong> that asks the user to input the details of the product (name, code, unit cost and whether or not it is in the current product line).  Use this data to create a new Product object i.e.</li>
+</ul>
+<pre><code>        System.out.print(&quot;Enter the Product Name:  &quot;);
+        String productName = input.nextLine();
+        System.out.print(&quot;Enter the Product Code:  &quot;);
+        int productCode = input.nextInt();
+        System.out.print(&quot;Enter the Unit Cost:  &quot;);
+        double unitCost = input.nextDouble();
+        System.out.print(&quot;Is this product in your current line (y/n): &quot;);
+        char currentProduct = input.next().charAt(0);
+        boolean inCurrentProductLine = false;
+        if ((currentProduct == &#39;y&#39;) || (currentProduct == &#39;Y&#39;))
+            inCurrentProductLine = true;
+
+        product = new Product(productName, productCode, unitCost, inCurrentProductLine);</code></pre>
+<ul>
+<li>Write a method called <strong>printProduct()</strong> that prints all the product to the console.  Hint: use the toString() method from the Product class.</li>
+</ul>
+<h2>Run the App</h2>
+<ul>
+<li>Run the app; does all work as expected?</li>
+</ul>
+<h2>Solution</h2>
+<p> <a href="archives/ShopV1.0.zip">ShopV1.0</a></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="05">
+        <h1>Scanner Exercise 1</h1>
+<ul>
+<li>This exercise will help you become more familiar with the Scanner class.</li>
+</ul>
+<h2>What are you being asked to do?</h2>
+<ul>
+<li><p>Write a program that asks the user to type in the value of an angle: 
+<img src="./img/18.png" alt="Input"></p>
+</li>
+<li><p>If the angle is less than 90, print out acute angle, e.g.:
+<img src="./img/19.png" alt="Acute Angle Output"></p>
+</li>
+<li><p>If it is exactly 90, print out right angle, e.g.:
+<img src="./img/20.png" alt="Right Angle Output"></p>
+</li>
+<li><p>If it is more than 90 but less than 180, print out obtuse angle, e.g.:, 
+<img src="./img/21.png" alt="Obtuse Angle Output"></p>
+</li>
+<li><p>If it is exactly 180, print out straight angle, e.g.:
+<img src="./img/22.png" alt="Straight Angle Output"></p>
+</li>
+<li><p>If it is otherwise, print out reflex angle, e.g.:
+<img src="./img/23.png" alt="Right Angle Output"></p>
+</li>
+</ul>
+<h2>How do I code that?</h2>
+<ul>
+<li><p>In Eclipse, create a new Java Project called <strong>AngleProject</strong>.</p>
+</li>
+<li><p>Create a class called <strong>Angle</strong> that contains your <strong>main</strong> method.  </p>
+</li>
+<li><p>Import the Scanner class; recall that this must be the first line in your file.</p>
+</li>
+<li><p>In the main method:</p>
+<ul>
+<li><p>Create an object of the Scanner class.</p>
+</li>
+<li><p>Ask the user to enter an angle and store it (you can determine the variable type from the screen shots above).</p>
+</li>
+<li><p>Call the <strong>processAngle</strong> method (defined below) passing, as the parameter, the angle value that you just read in.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>processAngle method</h2>
+<ul>
+<li><p>Create a private method, with a void return type and call it <strong>processAngle</strong>.  It should accept one parameter of type <strong>int</strong>.</p>
+</li>
+<li><p>This method interrogates the parameter value and prints the type of angle it is to the screen (according to the screen shots above).</p>
+</li>
+</ul>
+<h2>Run the App</h2>
+<ul>
+<li>Run the app; does all work as expected?</li>
+</ul>
+<h2>Solution</h2>
+<p> <a href="archives/AngleProject.zip">AngleProject</a></p>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="06">
+        <h1>Scanner Exercise 2</h1>
+<ul>
+<li>This exercise will help you become more familiar with the Scanner class.</li>
+</ul>
+<h2>What are you being asked to do?</h2>
+<ul>
+<li><p>You are asked to write a program that will read in name, address, age and date of birth from the user.
+<img src="./img/24.png" alt="Sample User Input"></p>
+</li>
+<li><p>The program will then print out the name, address, age and date of birth to the screen.
+<img src="./img/25.png" alt="Program Output"></p>
+</li>
+</ul>
+<h2>How do I code that?</h2>
+<ul>
+<li><p>In Eclipse, create a new Java Project called <strong>UserDetailsProject</strong>.</p>
+</li>
+<li><p>Create a class called <strong>UserDetails</strong> that contains your <strong>main</strong> method.  </p>
+</li>
+<li><p>Import the Scanner class; recall that this must be the first line in your file.</p>
+</li>
+<li><p>In the main method:</p>
+<ul>
+<li><p>Create an object of the Scanner class.</p>
+</li>
+<li><p>Ask the user to enter the details (according to the screen shot above).</p>
+</li>
+<li><p>Print the entered details back to the user (according to the screen shot above).</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2>Run the App</h2>
+<ul>
+<li>Run the app; does all work as expected?</li>
+</ul>
+<h2>Solution</h2>
+<p> <a href="archives/UserDetailsProject.zip">UserDetailsProject</a></p>
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <footer>
+
+    </footer>
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
+  </body>
+
+ </html>
