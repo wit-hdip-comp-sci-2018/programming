@@ -1,4 +1,4 @@
-//Setting up the display window and strokeWeight
+//Setting up the display window
 size(400,300);
 background(100); 
 
