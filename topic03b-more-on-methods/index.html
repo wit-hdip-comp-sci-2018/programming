@@ -1,458 +1,309 @@
  <!DOCTYPE html>
  <html>
    <head>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+     <!-- UIkit CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
+     <!-- UIkit JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+     <!-- fontawesome -->
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-
-
-     </style>
-
    </head>
-
   <body>
     
 
   
-<header class="ui center aligned middle aligned stackable grid segment">
-
-  
-    
-  <a class="ui blue left corner label">
-    <div id="showTOC" class="popup" data-content="Reveal TOC">
-      <i id="toc" class="sitemap big  icon"></i>
-    </div>
-  </a>
-
-  
-
-  <div class="two wide column">
-    <i class="huge grey settings icon"></i></a>
-  </div>
-
-
-  <div class="ui six wide column">
-    <h2> 3b: Methods (Part 2) </h2>
-    <div class="ui tiny blue label">
-      Colm Dunphy, Dr. Siobhan Drohan, Diarmuid O'Connor, Dr. Frank Walsh, WIT
-    </div>
-  </div>
-
-  <div class="ui two wide column">
-    
-      
-  <div class="two wide column sitemap">
-    <div class="popup" data-content="To the top level Topics for this Module...">
-      <a href="../index.html"> <i class="huge home icon"></i> <br> Module Home </a>
-    </div>
-  </div>
-
-    
-  </div>
-
-
-    
-  
-    <div class="three wide column">
-      <div class="ui equal width center aligned grid segment">
-        
-          <div class="column">
-            <div class="popup" data-content="To Adobe connect ...">
-              <a href="https://moodle.wit.ie/mod/adobeconnect/view.php?id=2427816" target="_blank"> <i class="big address card outline icon"></i>
-              </a>
-            </div>
-          </div>
-        
-        
-          <div class="column">
-            <div class="popup" data-content="To Moodle ...">
-              <a href="https://moodle.wit.ie/course/view.php?id=118143&section=1" target="_blank"> <i class="big student icon"></i></a>
-            </div>
-          </div>
-        
-        
-          <div class="column">
-            <div class="popup" data-content="To Slack Channel ...">
-              <a href="https://wit-hdip-comp-sci.slack.com/messages/C84S2LQSC/" target="_blank"> <i class="big slack icon"></i></a>
-            </div>
-          </div>
-        
-        
-          <div class="column">
-            <div class="popup" data-content="To Youtube Channel ...">
-              <a href="https://www.youtube.com/watch?v=4uMCr3cGe-Y&list=PLMW4bgOfD3DxoBKQbH2GRAmdqqaP9QA61" target="_blank"> <i class="big youtube icon"></i></a>
-            </div>
-          </div>
-        
+  <div class="uk-section uk-section-muted uk-padding-remove-vertical uk-flex-middle uk-text-center" uk-grid>
+    <div class="uk-width-2-5@m">
+      <h2> 3b: Methods (Part 2) </h2>
+      <div class="uk-text-muted uk-text-small">
+        Colm Dunphy, Dr. Siobhan Drohan, Diarmuid O'Connor, Dr. Frank Walsh, WIT
       </div>
     </div>
+    <div class="panel uk-width-expand@m">
+      
+        
+  
+  <li>
+    <a href="../index.html"
+       title="To the top level Topics for this Module" pos="bottom" uk-tooltip>
+      <i class="fas fa-home fa-4x" style="color:"></i>
+    </a>
+  </li>
+
+
+        
+    </div>
+    <div class="panel uk-width-expand@m">
+      
+  
+  
+    <ul class="uk-iconnav">
+      
+        
+  <li>
+    <a href="https://moodle.wit.ie/mod/adobeconnect/view.php?id=2427816"
+       title="To Adobe connect ..." pos="bottom" uk-tooltip>
+      <i class="far fa-address-card   fa-2x" style="color:grey"></i>
+    </a>
+  </li>
+
+      
+      
+        
+  <li>
+    <a href="https://moodle.wit.ie/course/view.php?id=118143&section=1"
+       title="To Moodle ..." pos="bottom" uk-tooltip>
+      <i class="fas fa-graduation-cap fa-2x" style="color:#f87f2a"></i>
+    </a>
+  </li>
+
+      
+      
+        
+  <li>
+    <a href="https://wit-hdip-comp-sci.slack.com/messages/C84S2LQSC/"
+       title="To Slack Channel ..." pos="bottom" uk-tooltip>
+      <i class="fab fa-slack          fa-2x" style="color:#573852"></i>
+    </a>
+  </li>
+
+      
+      
+        
+  <li>
+    <a href="https://www.youtube.com/watch?v=4uMCr3cGe-Y&list=PLMW4bgOfD3DxoBKQbH2GRAmdqqaP9QA61"
+       title="To Youtube Channel ..." pos="bottom" uk-tooltip>
+      <i class="fab fa-youtube        fa-2x" style="color:red"></i>
+    </a>
+  </li>
+
+          </ul>
   
 
-
-
-  <div class="three wide column">
-    
+    </div>
+    <div class="panel uk-width-expand@m">
+      
+      
+        
+  
+  
+  <ul class="uk-iconnav">
     
       
-  <div class="ui equal width center aligned grid segment">
+        
+        
+  <li>
+    <a href="../talkwall.html"
+       title="All slides's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-object-group fa-2x" style="color:"></i>
+    </a>
+  </li>
+
+      
     
       
-        <div class="column">
-          
-          
-          
+        
+        
+  <li>
+    <a href="../labwall.html"
+       title="All labs's in module" pos="bottom" uk-tooltip>
+      <i class="fas fa-flask        fa-2x" style="color:"></i>
+    </a>
+  </li>
+
+      
+    
+      
+    
+      
+        
+        
+  <li>
+    <a href="../panelvideowall.html"
+       title="All videos's in module" pos="bottom" uk-tooltip>
+      <i class="fab fa-youtube      fa-2x" style="color:"></i>
+    </a>
+  </li>
+
+      
+    
+      
+    
+      
+    
+  </ul>
+
+      
+    </div>
+  </div>
+
+
+  <div class="uk-container">
+    
+      
+    
+      
+    
+      
+    
+
+    <div class="uk-child-width-1-4@s uk-flex-center" uk-grid uk-height-match="target: > div > .uk-card">
+      
+        
+          <div>
             
-          
-          <div class="popup" data-content="All slide's in module">
-            <a href="../talkwall.html"> <i class="big object group icon"></i> </a>
-            <div class="ui blue mini circular label">
-              15
-            </div>
+
+  
+    
+  
+  
+    
+  
+
+  <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-text-center">
+    
+      <a href=.//talk-1-more-on-methods/a-processing-more-on-methods.pdf target="_blank">
+    
+      <div class="uk-card-header">
+        <div uk-grid>
+          <div class="uk-width-expand@m">
+            <h3> More on methods</h3>
+          </div>
+          <div class="uk-width-1-4@m">
+            <i class=" fas fa-object-group  fa-2x" style="color:grey"></i>
           </div>
         </div>
+      </div>
       
+      <div class="uk-card-body">
+        
+          <img src="./talk-1-more-on-methods/a-processing-more-on-methods.png">
+        
+      </div>
     
+      </a>
+    
+
+    <div class="uk-card-footer">
+      <p> <p>more sophisticated methods · return types · parameters · recursion</p>
+</p>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        
       
-        <div class="column">
-          
-          
-          
-          <div class="popup" data-content="All lab's in module">
-            <a href="../labwall.html"> <i class="big lab icon"></i> </a>
-            <div class="ui blue mini circular label">
-              7
-            </div>
+        
+          <div>
+            
+
+  
+    
+  
+  
+    
+  
+
+  <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-text-center">
+    
+      <a href=.//talk-2-strings/b-processing-strings.pdf target="_blank">
+    
+      <div class="uk-card-header">
+        <div uk-grid>
+          <div class="uk-width-expand@m">
+            <h3> Strings</h3>
+          </div>
+          <div class="uk-width-1-4@m">
+            <i class=" fas fa-object-group  fa-2x" style="color:grey"></i>
           </div>
         </div>
+      </div>
       
+      <div class="uk-card-body">
+        
+          <img src="./talk-2-strings/b-processing-strings.png">
+        
+      </div>
     
-      
+      </a>
     
+
+    <div class="uk-card-footer">
+      <p> <p>String · API · String methods</p>
+</p>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        
       
-        <div class="column">
-          
-          
+        
+          <div>
             
-          
-          
-          <div class="popup" data-content="All video's in module">
-            <a href="../panelvideowall.html"> <i class="big film icon"></i> </a>
-            <div class="ui blue mini circular label">
-              5
-            </div>
+
+  
+    
+  
+  
+    
+  
+
+  <div class="uk-card uk-card-default uk-card-hover uk-card-small uk-text-center">
+    
+      <a href=.//book/index.html>
+    
+      <div class="uk-card-header">
+        <div uk-grid>
+          <div class="uk-width-expand@m">
+            <h3> Lab-03b</h3>
+          </div>
+          <div class="uk-width-1-4@m">
+            <i class=" fas fa-flask  fa-2x" style="color:grey"></i>
           </div>
         </div>
+      </div>
       
+      <div class="uk-card-body">
+        
+          <img src="./book/img/main.png">
+        
+      </div>
     
+      </a>
+    
+
+    <div class="uk-card-footer">
+      <p> <p>more sophisticated methods · return types · parameters · Strings · String methods · JOptionPane</p>
+</p>
+    </div>
+
+    
+  </div>
+
+
+          </div>
+        
       
-    
-      
-    
-  </div>
-
-    
-  </div>
-
-</header>
-
-  
-
-
-
-  <div class="ui pushable">
-    <div class="ui inverted labeled icon left inline vertical sidebar menu">
-      <div class="header">
-        <a class="item" href="#">
-          
-        </a>
-      </div>
-      <div class="menu">
-        
-          <a class="item" href="talk-1-more-on-methods/a-processing-more-on-methods.pdf">
-            More on methods
-          </a>
-        
-          <a class="item" href="talk-2-strings/b-processing-strings.pdf">
-            Strings
-          </a>
-        
-          <a class="item" href="book/index.html">
-            Lab-03b
-          </a>
-        
-      </div>
-    </div>
-    <div class="pusher">
-      <section class="ui container">
-        
-          
-        
-          
-        
-          
-        
-        
-          
-  
-
-        
-          
-  
-    <section class="ui raised stackable segment">
-      <div class="ui blue left ribbon large label"> 
-  
-    Slides
-  
-  
-  
- </div>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-
-<div class="ui  raised link  card">
-
-
-  <div class="center aligned content">
-    <div class="right floated meta"><i class="huge  object group 
-    icon"></i></div>
-    <div class="header"> More on methods</div>
-
-  </div>
-
-  <a href=
-  
-    "talk-1-more-on-methods/a-processing-more-on-methods.pdf" target="_blank">
-  
-
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-1-more-on-methods/a-processing-more-on-methods.png">
-      </div>
-    
-    </a>
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>more sophisticated methods · return types · parameters · recursion</p>
-
-      </div>
-    </div>
-    
-
-    
-
-    
-
-    </div>
-    
-          
-        
-          
-            
-
-<div class="ui  raised link  card">
-
-
-  <div class="center aligned content">
-    <div class="right floated meta"><i class="huge  object group 
-    icon"></i></div>
-    <div class="header"> Strings</div>
-
-  </div>
-
-  <a href=
-  
-    "talk-2-strings/b-processing-strings.pdf" target="_blank">
-  
-
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="talk-2-strings/b-processing-strings.png">
-      </div>
-    
-    </a>
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>String · API · String methods</p>
-
-      </div>
-    </div>
-    
-
-    
-
-    
-
-    </div>
-    
-          
-        
-      </div>
-    </section>
-  
-
-        
-          
-  
-    <section class="ui raised stackable segment">
-      <div class="ui blue left ribbon large label"> 
-  
-  
-    Labs
-  
-  
- </div>
-      <div class="ui centered four doubling stackable cards">
-        
-          
-            
-
-<div class="ui  raised link  card">
-
-
-  <div class="center aligned content">
-    <div class="right floated meta"><i class="huge  lab 
-    icon"></i></div>
-    <div class="header"> Lab-03b</div>
-
-  </div>
-
-  <a href=
-  
-    "book/index.html">
-  
-
-    
-      <div class="image">
-        <img class="ui bordered rounded image" src="book/img/main.png">
-      </div>
-    
-    </a>
-
-    <div class="center aligned content">
-      <div class="description">
-        <p>more sophisticated methods · return types · parameters · Strings · String methods · JOptionPane</p>
-
-      </div>
-    </div>
-    
-
-    
-
-    
-
-    </div>
-    
-          
-        
-      </div>
-    </section>
-  
-
-        
-          
-  
-
-        
-          
-  
-
-        
-          
-  
-
-        
-      </section>
     </div>
   </div>
 
 
-    <!--<footer>-->
-
-    <!--</footer>-->
-    <script>
-      $(document).ready(function() {
-  $('img').addClass('ui image');
-
-  $('.ui.embed').embed();
-
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
-
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
-
-  $('.popup').popup();
-
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
-
-    </script>
   </body>
-
  </html>

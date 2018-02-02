@@ -1,65 +1,38 @@
  <!DOCTYPE html>
  <html>
    <head>
-
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-     
-
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+     <!-- UIkit CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
+     <!-- UIkit JS -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.38/js/uikit-icons.min.js"></script>
+     <!-- fontawesome -->
+     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
-
-     
-
-     <style>
-       
-
-body 
-{
-  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
-}
-
-figcaption
-{
-  margin-bottom: 20px;
-}
-
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-
-
-     </style>
-
    </head>
-
   <body>
     
 
-<style>
-  
+  <style>
+    
+
+/*body */
+/*{*/
+  /*font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;*/
+/*}*/
+
+
+
+    
 
 code
 {
@@ -92,133 +65,48 @@ h3
   border-bottom: thin solid black;
 }
 
-body
-{
-  overflow-y: scroll;
-}
-
-.pushable > .pusher
-{
-  padding-bottom: 1.5rem;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
 
 
+  </style>
 
-</style>
-
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    <a href="../index.html">
-      3b: Methods (Part 2)
-    </a>
-  </header>
-  <div class="right tab-menu menu">
-    
-    <a class="item" data-tab="Lab-03b">
-      Lab-03b
-    </a>
-    
-    <a class="item" data-tab="01">
-      01
-    </a>
-    
-    <a class="item" data-tab="02">
-      02
-    </a>
-    
-    <a class="item" data-tab="03">
-      03
-    </a>
-    
-    <a class="item" data-tab="04">
-      04
-    </a>
-    
-    <a class="item" data-tab="Exercises">
-      Exercises
-    </a>
-    
-    <a class="item" data-tab="Challenges">
-      Challenges
-    </a>
-    
-    <a class="item" data-tab="Solutions">
-      Solutions
-    </a>
-    
-    <div class="item">
-      
-    </div>
-  </div>
-</div>
-
-<div class="ui segment pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item" href="../../topic00b-induction/book-induction/index.html">
-          Induction
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic01a-intro-to-processing/book-1a/index.html">
-          Lab-1a
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic01b-animate-your-drawings/book-1b/index.html">
-          Lab-1b
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic02a-if-stmt-and-events/book/index.html">
-          Lab-02a
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
-          Lab-02b
-        </a>
-      
-    
-      
-        <a class="item" href="../../topic03a-methods/book/index.html">
-          Lab-03a
-        </a>
-      
-    
-      
-        <a class="active item" href="../../topic03b-more-on-methods/book/index.html">
-          Lab-03b
-        </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment" id="labchat">
-      <br>
-      
-      <div  class="ui tab segment lab" data-tab="Lab-03b">
-        <h1>Objectives</h1>
-<p>more sophisticated methods · return types · parameters · Strings · String methods · JOptionPane</p>
-
+  <div uk-sticky>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-subnav-left">
+        <ul class="uk-background-secondary uk-subnav-pill uk-subnav-divider">
+          <li class="uk-active"><a href="../index.html">3b: Methods (Part 2)</a></li>
+        </ul>
       </div>
-     
-      <div  class="ui tab segment lab" data-tab="01">
-        <h1>Abstracting code to a method</h1>
+      <div class="uk-navbar-right">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
+          
+            <li><a href="#">Lab-03b</a></li>
+          
+            <li><a href="#">01</a></li>
+          
+            <li><a href="#">02</a></li>
+          
+            <li><a href="#">03</a></li>
+          
+            <li><a href="#">04</a></li>
+          
+            <li><a href="#">Exercises</a></li>
+          
+            <li><a href="#">Challenges</a></li>
+          
+            <li><a href="#">Solutions</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="uk-container uk-container-expand">
+    <ul class="uk-switcher switcher-container">
+      
+        <li> <h1>Objectives</h1>
+<p>more sophisticated methods · return types · parameters · Strings · String methods · JOptionPane</p>
+</li>
+      
+        <li> <h1>Abstracting code to a method</h1>
 <p>In this step, you will draw many eyes (the examples 3.7 - 3.9 from your lectures).</p>
 <h2>Coding the setup() method</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_7</strong>.</p>
@@ -252,11 +140,9 @@ body
 <p>Now refactor the code to call the eye method six times from the draw method so that your display window is rendered like so:</p>
 <p><img src="./img/01.png" alt="Six eyes"></p>
 <p>Save your work.</p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="02">
-        <h1>Overloading methods</h1>
+</li>
+      
+        <li> <h1>Overloading methods</h1>
 <p>In this step, you will draw many X&#39;s (the processing examples 3.10 - 3.15 from your lectures).</p>
 <h2>Coding the setup() method</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_10</strong>.</p>
@@ -328,11 +214,9 @@ body
 <p>Save your work.</p>
 <h2>Versioning Software</h2>
 <p>For our drawX project, you will notice that we now have 5 sketches, <strong>Example_3_10</strong> to <strong>Example_3_15</strong>.  This means that we have 5 different versions of the drawX project.  As we incrementally worked on our drawX project and got a new method working, we saved off that work and starting working in a new file.  This is a standard approach in programming and we will focus more on this approach throughout the course.  </p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="03">
-        <h1>Farenheit / Celsius Converter</h1>
+</li>
+      
+        <li> <h1>Farenheit / Celsius Converter</h1>
 <p>In this step, you will work on reproducing the code example 3.16 from your lectures.</p>
 <h2>Writing the coversion method</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_16</strong>.</p>
@@ -343,11 +227,9 @@ body
 <p>The <strong>farenheitToCelsius</strong> method should be called from the draw() method.</p>
 <p>The value retuned from the calculation should be printed to the console.</p>
 <p>Test your code by passing the farenheit value of 451.  The celsius value printed should be:  232.77779  </p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="04">
-        <h1>Recursion</h1>
+</li>
+      
+        <li> <h1>Recursion</h1>
 <p>In this step, you will work on reproducing the code example 3.17 from your lectures.</p>
 <h2>Solution with no recursion</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_17</strong>.</p>
@@ -374,11 +256,9 @@ void drawLines(int x, int num)
 <h2>Using recursion</h2>
 <p>Rewrite the <strong>drawLines</strong> method so that it uses recursion to produce the same output as above.</p>
 <p>Save your work.</p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Exercises">
-        <h1>Exercise</h1>
+</li>
+      
+        <li> <h1>Exercise</h1>
 <h2>Exercise 1 (String methods)</h2>
 <p>Create a new sketch called <strong>lab03b_exercise01</strong>.</p>
 <p>In this exercise, you will call many different methods over a given String.</p>
@@ -386,11 +266,9 @@ void drawLines(int x, int num)
 <p>Produce the following console output over the String:</p>
 <p><img src="./img/08.png" alt="String details"></p>
 <p>Save your work.</p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Challenges">
-        <h1>Challenges</h1>
+</li>
+      
+        <li> <h1>Challenges</h1>
 <p>For each challenge listed below, open a new sketch.</p>
 <p>In these challenges, we are going to use something you haven&#39;t seen before..Message Dialogs.  </p>
 <p><img src="./img/09.png" alt="Message Dialog"></p>
@@ -430,95 +308,16 @@ void setup()
 <p>Using the newline escape sequence, format the code from the above challenge so that your Message Dialog looks like this:</p>
 <p><img src="./img/11.png" alt="Formatted Message Dialog"></p>
 <p>Save your work.</p>
-
-      </div>
-     
-      <div  class="ui tab segment lab" data-tab="Solutions">
-        <h1>Solutions</h1>
+</li>
+      
+        <li> <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab03b_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
-
-      </div>
-     
-    </div>
+</li>
+      
+    </ul>
   </div>
-</div>
-<!--<div class="ui bottom fixed borderless right menu">
-  <div class="ui right tiny menu">
-    <div class="ui mini message segment">
-      .
-      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
-         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
-         target="_blank">Creative Commons License
-      </a>
-    </div>
-  </div>
-</div>-->
 
-<script>
-  $(document).on('keydown', function(e) {
-  e = e || window.event;
-  var nextTab;
-  switch (e.which || e.keyCode) {
-    case 37: // left
-      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-
-    case 39: // right
-      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-  }
-});
-
-</script>
-
-
-
-    <!--<footer>-->
-
-    <!--</footer>-->
-    <script>
-      $(document).ready(function() {
-  $('img').addClass('ui image');
-
-  $('.ui.embed').embed();
-
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
-
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
-
-  $('.popup').popup();
-
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
-
-    </script>
   </body>
-
  </html>
