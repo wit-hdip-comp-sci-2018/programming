@@ -1,24 +1,65 @@
  <!DOCTYPE html>
  <html>
    <head>
+
      <meta charset="utf-8">
      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     
+
      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/css/uikit.min.css" />
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.39/js/uikit-icons.min.js"></script>
-     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+
+     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
      <script>hljs.initHighlightingOnLoad();</script>
+
+     
+
+     <style>
+       
+
+body 
+{
+  font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+}
+
+figcaption
+{
+  margin-bottom: 20px;
+}
+
+.vertical-align
+{
+  display: flex;
+  align-items: center;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
+
+
+
+     </style>
+
    </head>
-  <body class="uk-background-mute">
+
+  <body>
     
 
-  <style>
-    
-    
+<style>
+  
 
 code
 {
@@ -51,48 +92,133 @@ h3
   border-bottom: thin solid black;
 }
 
+body
+{
+  overflow-y: scroll;
+}
+
+.pushable > .pusher
+{
+  padding-bottom: 1.5rem;
+}
+
+.ui.segment.pushable
+{
+  margin: 0;
+  padding: 1rem 0;
+  overflow: visible;
+}
 
 
-  </style>
 
-  <div uk-sticky>
-    <nav class="uk-navbar-container" uk-navbar>
-      <div class="uk-subnav-left">
-        <ul class="uk-background-secondary uk-subnav-pill uk-subnav-divider">
-          <li class="uk-active"><a href="../index.html">3a: Methods (Part 1)</a></li>
-        </ul>
-      </div>
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-03a</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-            <li><a href="#">Challenges</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
+</style>
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
+    <a href="../index.html">
+      3a: Methods (Part 1)
+    </a>
+  </header>
+  <div class="right tab-menu menu">
+    
+    <a class="item" data-tab="Lab-03a">
+      Lab-03a
+    </a>
+    
+    <a class="item" data-tab="01">
+      01
+    </a>
+    
+    <a class="item" data-tab="02">
+      02
+    </a>
+    
+    <a class="item" data-tab="03">
+      03
+    </a>
+    
+    <a class="item" data-tab="04">
+      04
+    </a>
+    
+    <a class="item" data-tab="Exercises">
+      Exercises
+    </a>
+    
+    <a class="item" data-tab="Challenges">
+      Challenges
+    </a>
+    
+    <a class="item" data-tab="Solutions">
+      Solutions
+    </a>
+    
+    <div class="item">
+      
+    </div>
   </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
+</div>
+
+<div class="ui segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
       
-        <li> <h1>Objectives</h1>
+        <a class="item" href="../../topic00b-induction/book-induction/index.html">
+          Induction
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01a-intro-to-processing/book-1a/index.html">
+          Lab-1a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic01b-animate-your-drawings/book-1b/index.html">
+          Lab-1b
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02a-if-stmt-and-events/book/index.html">
+          Lab-02a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
+          Lab-02b
+        </a>
+      
+    
+      
+        <a class="active item" href="../../topic03a-methods/book/index.html">
+          Lab-03a
+        </a>
+      
+    
+      
+        <a class="item" href="../../topic03b-more-on-methods/book/index.html">
+          Lab-03b
+        </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment" id="labchat">
+      <br>
+      
+      <div  class="ui tab segment lab" data-tab="Lab-03a">
+        <h1>Objectives</h1>
 <p>methods · mouse event methods · bespoke methods</p>
-</li>
-      
-        <li> <h1>Understanding mouse event methods</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="01">
+        <h1>Understanding mouse event methods</h1>
 <p>In this step, you will work on the processing example 3.1 from your lectures.</p>
 <h2>Coding the setup() method</h2>
 <p>Create a new Processing sketch and call it <strong>Example_3_1</strong>.</p>
@@ -182,9 +308,11 @@ h3
         text(&quot;and it was the right button&quot;, width/2, height/2 + 40);
     }
 }</code></pre>
-</li>
-      
-        <li> <h1>Mouse event methods</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="02">
+        <h1>Mouse event methods</h1>
 <p>In last week&#39;s examples, 2.5 to 2.8 inclusive, we used the mouse system variables e.g. mousePressed. </p>
 <p>In this step, you will re-write that code to use mouse event methods instead e.g. void mousePressed(). </p>
 <p>You will notice, this time, that we haven&#39;t given you the reworked code to type in; have a go at making the code changes yourself and if you need some help, you can refer to your lecture notes (or download the solutions).  And don&#39;t worry if you have to refer to either the notes or the solutions, you are only three weeks into the course!</p>
@@ -272,9 +400,11 @@ void draw() {
 <p>Run the code so that you understand exactly what it does.</p>
 <p>Rework the code so that it no longer tests the mouse system variable but uses the mouse event methods instead.</p>
 <p>Run your code.  Does it work as you would expect?</p>
-</li>
-      
-        <li> <h1>Writing your own methods</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="03">
+        <h1>Writing your own methods</h1>
 <p>In this step, you will work on reproducing the code examples 3.2 to 3.5 inclusive from your lectures.</p>
 <h2>Example 3.2</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_2</strong>.</p>
@@ -404,9 +534,11 @@ void drawRedSquare(int length, int xCoord, int yCoord)
 <p>This code calls the drawRedSquare method multiple times (using a for loop).  </p>
 <p>Run your code.  Does it work as you would expect?  Are 6 red squares drawn on the display window?</p>
 <p>Now try re-write the for loop so that it is a while loop.  Run and test your code again.  There should be no changes in the display window.</p>
-</li>
-      
-        <li> <h1>Writing your own methods</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="04">
+        <h1>Writing your own methods</h1>
 <p>In this step, you will work on reproducing the code example 3.6 from your lectures.</p>
 <h2>Example 3.6</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_6</strong>.</p>
@@ -427,9 +559,11 @@ int timestwo(int val)
 <p>This code calls the <strong>timesTwo</strong> method from the setup() method.  This means that the <strong>timesTwo</strong> method is only called once.</p>
 <p>The <strong>timesTwo</strong> method takes in a parameter of type <strong>int</strong>, it multiplies the value of this parameter by 2 and then returns the value back to where the method was called from.  It stores the returned value in another variable of type <strong>int</strong> that is called <strong>result</strong>.  The value of the variable <strong>result</strong> is printed to the console.</p>
 <p>Run your code.  Does it work as you would expect?  Is the value 60 printed to the console?</p>
-</li>
-      
-        <li> <h1>Exercises</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Exercises">
+        <h1>Exercises</h1>
 <ul>
 <li><p>For each exercise listed below, create a new sketch.</p>
 </li>
@@ -448,9 +582,11 @@ int timestwo(int val)
 <p>Using the solution to Exercise 1, try produce this output:</p>
 <p><img src="./img/07.png" alt="Expected output"></p>
 <p>Note that you can achieve this with just one extra line of code!</p>
-</li>
-      
-        <li> <h1>Challenges</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Challenges">
+        <h1>Challenges</h1>
 <ul>
 <li>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</li>
 </ul>
@@ -487,16 +623,95 @@ void draw()
 <p>Note: remember that the solution is available on the next tab, if you need to look at it.</p>
 <h2>Challenge 2</h2>
 <p>Now that you have the code drawing a target with 3 circles, test it so that you can easily draw targets with 6 circles etc.  You should only need to change the actual paramter passed in the <strong>drawTarget</strong> method.  </p>
-</li>
-      
-        <li> <h1>Solutions</h1>
+
+      </div>
+     
+      <div  class="ui tab segment lab" data-tab="Solutions">
+        <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab03a_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
-</li>
-      
-    </ul>
-  </div>
 
+      </div>
+     
+    </div>
+  </div>
+</div>
+<!--<div class="ui bottom fixed borderless right menu">
+  <div class="ui right tiny menu">
+    <div class="ui mini message segment">
+      .
+      <a href="http://creativecommons.org/licenses/by-nc/4.0/"
+         title="External link to http://creativecommons.org/licenses/by-nc/4.0/"
+         target="_blank">Creative Commons License
+      </a>
+    </div>
+  </div>
+</div>-->
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+</script>
+
+
+
+    <!--<footer>-->
+
+    <!--</footer>-->
+    <script>
+      $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
+});
+
+    </script>
   </body>
+
  </html>
