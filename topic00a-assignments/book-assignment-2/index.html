@@ -105,8 +105,8 @@ body
       </header>
       <div class="right tab-menu menu">
         
-          <a class="item" data-tab="Assignment-1">
-            Assignment-1
+          <a class="item" data-tab="Assignment-2">
+            Assignment-2
           </a>
         
           <a class="item" data-tab="Advice">
@@ -136,13 +136,13 @@ body
         <br><br>
         
           
-            <a class="active item" href="../../topic00a-assignments/book-assignment-1/index.html">
+            <a class="item" href="../../topic00a-assignments/book-assignment-1/index.html">
               Assignment-1
             </a>
           
         
           
-            <a class="item" href="../../topic00a-assignments/book-assignment-2/index.html">
+            <a class="active item" href="../../topic00a-assignments/book-assignment-2/index.html">
               Assignment-2
             </a>
           
@@ -254,15 +254,15 @@ body
         <div class="ui basic segment" id="labchat">
           <br>
           
-            <div  class="ui tab segment lab" data-tab="Assignment-1">
-              <h1>Assignment 1</h1>
-<p>This is your first assignment that will contribute to your grade for the semester.  It is worth 20% of your overall grade.  You are asked to write a working animation.</p>
+            <div  class="ui tab segment lab" data-tab="Assignment-2">
+              <h1>Assignment 2</h1>
+<p>This is your second assignment that will contribute to your grade for the semester.  It is worth 40% of your overall grade.  You are asked to write a more involved working animation / game.</p>
 
             </div>
           
             <div  class="ui tab segment lab" data-tab="Advice">
-              <h1>Assignment 1</h1>
-<p>This will detail, for your first assignment:</p>
+              <h1>Assignment 2</h1>
+<p>This will detail, for your second assignment:</p>
 <ul>
 <li><em>Specification:</em> What is expected from your code.</li>
 <li><em>Marking:</em> The marking scheme for the assignment.</li>
@@ -289,21 +289,36 @@ body
           
             <div  class="ui tab segment lab" data-tab="Specification">
               <h1>Specification</h1>
-<p>In this assignment, you are asked to write code to produce a dynamic animation with user interaction (i.e mouse and Swing dialog box) of your choice in Processing (Java).</p>
-<p>The aim of the assignment is for you to demonstrate your understanding of structures seen so far, so you are asked to include the following:</p>
+<p>In your second assignment, you are asked to write code to produce a more complex dynamic animation / game of your choice with user interaction of your choice in Processing (Java).</p>
+<p>The aim of the assignment is for you to demonstrate your understanding of all the structures seen so far.  Specifically, you are asked to include the following:</p>
 <ul>
-<li><p>The usual Processing class containing the draw(), setup(), etc.  </p>
+<li><p>At least one user-defined class, adhering to encapsulation rules, complete with:</p>
+<ul>
+<li>fields</li>
+<li>constructors</li>
+<li>getters</li>
+<li>setters</li>
+<li>other methods</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>The usual Processing class containing the draw(), setup(), etc.  This class must use your user-defined class(es) in an appropriate manner.</p>
 </li>
 <li><p>Use of selection (if) and iteration (loops).</p>
 </li>
-<li><p>Use of String methods (e.g. equals, length, substring, etc).</p>
-</li>
-<li><p>Use of processing methods e.g. mousePressed.</p>
-</li>
-<li><p>Use of at least one bespoke method you defined and wrote yourself e.g. eyes(), drawX().</p>
+<li><p>Use of primitive / object arrays.</p>
 </li>
 </ul>
+<h2>A note on complexity</h2>
 <p>The complexity of the entire code is important, i.e. the more complex the code, the more marks you will achieve. (see marking scheme).</p>
+<p>The <strong>Pong game v8</strong> that we covered in lectures and labs is an example of top marks for complexity. </p>
+<p>Bear in mind that you don&#39;t have to develop a game; you can also develop a complex animation instead.  </p>
+<h2>A Suggestion</h2>
+<p>Build a game other than Pong or a complex animation.</p>
+<p>Our recommendation is that you try something other than Pong. If you hand up another version of Pong it will need to go beyond v8 in complexity. 
+i.e. you have the code for v8 and v9 of Pong so you will need to implement addtional functionality and classes (e.g. 2 player with one player being the computer etc.)</p>
+<p>When handing up it is important that you explicitly highlight how you&#39;ve met each part of the spec. Additionally if you are handing up Pong again you will need to explicity highlight the difference between the first version that you handed up and this version.</p>
 
             </div>
           
@@ -316,12 +331,24 @@ body
 </ul>
 <p><em>Please read below regarding interviews.</em></p>
 <h2>Structure of Code  (100 Marks)</h2>
-<p>Working animation i.e. inclusion of the usual Processing class containing the draw(), setup(), etc. <strong>(10 marks)</strong></p>
-<p>Use of String methods <strong>(10 marks)</strong>.</p>
-<p>Use of if statements <strong>(10 marks)</strong>.</p>
-<p>Use of loops <strong>(20 marks)</strong>.</p>
-<p>Use of processing methods e.g. mousePressed. <strong>(20 marks)</strong>.</p>
-<p>Use of at least one bespoke method you defined and wrote yourself e.g. eyes(), drawX().   <strong>(25 marks)</strong>.</p>
+<p>Working animation with inclusion of bespoke methods in the main sketch. <strong>(10 marks)</strong></p>
+<p>User-defined class (at least one):</p>
+<ul>
+<li><p>Creation of user-defined class with appropriate fields, constructors, getters, setters <strong>(10 marks)</strong>.</p>
+</li>
+<li><p>Class bespoke methods (15 marks)</p>
+</li>
+<li><p>The user-defined class(es) are used in an appropriate manner <strong>(15 marks)</strong>.</p>
+</li>
+</ul>
+<p>Data structure:</p>
+<ul>
+<li><p>Use of a data structure to store information i.e. array <strong>(20 marks)</strong>.</p>
+</li>
+<li><p>Calculations performed on the information stored <strong>(20 marks)</strong>.</p>
+</li>
+</ul>
+<p>Use of standard programming control contructs (if, loop) <strong>(5 marks)</strong>.</p>
 <p>Comments, indentation, naming, structure of code, etc. <strong>(5 marks)</strong></p>
 <h2>Complexity of code (10 Marks)</h2>
 <p>This is a mark out of 10 based on the complexity of the problem solved/code. So you will get more marks if the animation is more involved than one that is very simple. Please do not confuse an elegant solution of a complex problem with a simple problem.</p>
@@ -354,7 +381,7 @@ body
             <div  class="ui tab segment lab" data-tab="Submission">
               <h1>Handup of submission</h1>
 <h2>Date</h2>
-<p>The submission is due <strong><em>Sunday 11th March, 5PM</em></strong>.</p>
+<p>The submission is due <strong><em>Sunday 15 April 2018, 11.55PM</em></strong>.</p>
 <p>No late submissions will be accepted (unless mitigating circumstances, with supporting documentation, apply).</p>
 <h2>Where</h2>
 <p>The dropbox is available in the &#39;Assignments&#39; section in Moodle.</p>
@@ -372,11 +399,15 @@ Student Number:
 
 Brief description of the animation achieved:
 
+Justification of spec:
+
 Known bugs/problems:
 
 Any sources referred to during the development of the assignment (no need to reference lecture/lab materials):
 
 */</code></pre>
+<p>If you hand up another version of Pong you will need to state the addtional features added in the description section above.</p>
+<p>Additionally, if you are handing up Pong for a second time, add another section within the description, explicity stating the difference between the first version that you handed up, and this version.</p>
 
             </div>
           
