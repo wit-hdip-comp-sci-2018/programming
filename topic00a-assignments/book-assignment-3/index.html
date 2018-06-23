@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,323 +7,363 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      
+  </head>
+  <style>
+    
 
-body
-{
+body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
 }
 
-figcaption
-{
-  margin-bottom: 20px;
+p {
+  margin: 0.5em;
 }
 
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-code
-{
+pre code {
   font-family: "Monaco";
-  font-size: 110%;
+  font-size: 100%;
 }
 
-img
-{
-  padding:1px;
-  border:1px solid black;
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1
-{
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
   font-style:italic;
   font-size:130%;
-  border-bottom:thin solid black;
 }
 
-h2
-{
+h2 {
   font-size:110%;
-  border-bottom: thin solid black;
 }
 
-h3
-{
+h3 {
   font-size:100%;
-  border-bottom: thin solid black;
-}
-
-body
-{
-  overflow-y: scroll;
-}
-
-.pushable > .pusher
-{
-  padding-bottom: 1.5rem;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
 }
 
 
 
-    </style>
-  </head>
+  </style>
+<body>
 
-  <body>
-    
-    
-
-    <div class="ui fixed top pointing inverted stackable menu labmenu">
-      <header class="header item">
-        <i id="toc" class="sitemap icon"></i>
-        <a href="../index.html">
-           Assignments 
-        </a>
-      </header>
-      <div class="right tab-menu menu">
-        
-          <a class="item" data-tab="Assignment 3">
-            Assignment 3
-          </a>
-        
-          <a class="item" data-tab="Data Model">
-            Data Model
-          </a>
-        
-          <a class="item" data-tab="Gym API">
-            Gym API
-          </a>
-        
-          <a class="item" data-tab="Utility Class">
-            Utility Class
-          </a>
-        
-          <a class="item" data-tab="MenuController">
-            MenuController
-          </a>
-        
-          <a class="item" data-tab="Unit Tests">
-            Unit Tests
-          </a>
-        
-          <a class="item" data-tab="Grading Spectrum">
-            Grading Spectrum
-          </a>
-        
-          <a class="item" data-tab="Submission">
-            Submission
-          </a>
-        
-        <div class="item">
+  
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
           
-        </div>
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment-1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment-2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment 3
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Induction
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-04a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-04b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06d
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment 3 Prerequisite
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12
+                </a>
+              </li>
+            
+          
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="ui segment pushable">
-      <div class="ui inverted labeled icon left inline vertical sidebar menu">
-        <br><br>
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-1/index.html">
-              Assignment-1
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-2/index.html">
-              Assignment-2
-            </a>
-          
-        
-          
-            <a class="active item" href="../../topic00a-assignments/book-assignment-3/index.html">
-              Assignment 3
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00b-induction/book-induction/index.html">
-              Induction
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic01a-intro-to-processing/book-1a/index.html">
-              Lab-1a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic01b-animate-your-drawings/book-1b/index.html">
-              Lab-1b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02a-if-stmt-and-events/book/index.html">
-              Lab-02a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
-              Lab-02b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03a-methods/book/index.html">
-              Lab-03a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03b-more-on-methods/book/index.html">
-              Lab-03b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04a-strings-and-intro-to-classes/book/index.html">
-              Lab-04a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04b-classes-encapsulation/book/index.html">
-              Lab-04b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05a-swing-and-arrays/book/index.html">
-              Lab-05a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05b-arrays-and-classes/book/index.html">
-              Lab-05b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v1-v2/index.html">
-              Lab-06a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v3-v4-v5/index.html">
-              Lab-06b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v6-v7-v8/index.html">
-              Lab-06c
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v9/index.html">
-              Lab-06d
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
-              Lab-07a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-IntelliJ-JVM-and-IO/book-b/index.html">
-              Lab-07b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-grouping-objects/book-1/index.html">
-              Lab-08a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-grouping-objects/book-2/index.html">
-              Lab-08b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-1/index.html">
-              Lab-09a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-2/index.html">
-              Lab-09b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-3/index.html">
-              Assignment 3 Prerequisite
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic10-persistence-xml-exceptions/book/index.html">
-              Lab-10
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic11-inher-polym/book/index.html">
-              Lab-11
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic12-collections-map-set/book/index.html">
-              Lab-12
-            </a>
-          
-        
+
+  <div uk-sticky>
+    <nav uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
+          <li class="uk-active"><a href="../index.html"> Assignments </a></li>
+        </ul>
       </div>
-      <div class="pusher" tabindex="-1">
-        <div class="ui basic segment" id="labchat">
-          <br>
+
+
+      <div class="uk-navbar-right">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
           
-            <div  class="ui tab segment lab" data-tab="Assignment 3">
-              <h1>Assignment 3.</h1>
+            <li><a href="#">Assignment 3</a></li>
+          
+            <li><a href="#">Data Model</a></li>
+          
+            <li><a href="#">Gym API</a></li>
+          
+            <li><a href="#">Utility Class</a></li>
+          
+            <li><a href="#">MenuController</a></li>
+          
+            <li><a href="#">Unit Tests</a></li>
+          
+            <li><a href="#">Grading Spectrum</a></li>
+          
+            <li><a href="#">Submission</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="uk-container uk-container-expand">
+    <ul class="uk-switcher switcher-container">
+      
+        <li> <h1>Assignment 3.</h1>
 <p>You are required to implement a console-based Gym Management application. The application&#39;s architecture is illustrated below.</p>
 <p><img src="./img/arch.jpg" alt=""></p>
 <p>The components of the architecture are:</p>
@@ -339,11 +381,9 @@ body
 <p>Download <a href="./archives/start.zip">this archive</a> and unzip it. The base folder, <code>Assignment3</code> is an InterriJ skeleton project. Open it inside your InyrlliJ environment.</p>
 <p><img src="./img/skeleton.png" alt=""></p>
 <p>You are required to develop the application code in the classes of the <code>src/main</code> folder. Some classes already contain initial code to help you get started - although this code is incomplete. The <code>src/test</code> folder contains unit test code, which will be provided incrementally (via Slack)  over the duration of the assignment.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Data Model">
-              <h2>Data model requirements.</h2>
+</li>
+      
+        <li> <h2>Data model requirements.</h2>
 <p>The app&#39;s data model consists of the following entities: Premium Member, Student Member, Trainer, and Assessment. Clearly the two member types will have common fields and methods (see below). Applying an inheritance design to their implementation will be rewarded with additional marks - see grading spectrum. Inheritance also applies between Trainer and Member (a Person type) which must be implemented. A visual representation of the data model is shown below: </p>
 <p><img src="./img/dataModel.jpg" alt=""></p>
 <p>The design detail for the classes are as follows:</p>
@@ -389,11 +429,9 @@ The concrete implementation of this method will be completed in Member subclasse
 <li>public void chosenPackage(String packageChoice) - Provides the concrete implementation for this method. The chosenPackage is set to the package associated with their collegeName. If there is no package associated with their college, default to “Package 3”.</li>
 </ul>
 <p>The last model class is Assessment. It stores weight, thigh, waist, comment and a Trainer that entered the member’s assessment (i.e. personal trainer). This class just has the standard constructor, accessor and mutator method with no validation on any fields.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Gym API">
-              <h2>Gym API.</h2>
+</li>
+      
+        <li> <h2>Gym API.</h2>
 <p>This class operates between the model classes and the menu driver class (see later). It stores:</p>
 <ul>
 <li>an ArrayList of Members</li>
@@ -435,11 +473,9 @@ the associated XML file.</li>
 <li>public void load() throws Exception - Pull the members and trainers array lists from 
 the associated XML file.</li>
 </ul>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Utility Class">
-              <h2>Utility class.</h2>
+</li>
+      
+        <li> <h2>Utility class.</h2>
 <p>A utility class (or helper class) is a &quot;structure&quot; that has only static methods and encapsulates no state (fields). Typically the functionality of the methods is reusable across a range of applications. </p>
 <p>For the Gym management application we can define an Analytics class that would hold the following methods:</p>
 <ul>
@@ -463,11 +499,9 @@ the associated XML file.</li>
 </ul>
 </li>
 </ul>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="MenuController">
-              <h2>MenuController class.</h2>
+</li>
+      
+        <li> <h2>MenuController class.</h2>
 <p>The menu driver class (MenuController) uses the console I/O to interact with the user. It should create an instance of the GymApi class and allow the user to navigate (a subset of) the system&#39;s features through a series of menus. The following processing is required in this menu system:</p>
 <ol>
 <li>On app start-up, automatically load the gym data (trainers and members) from an XML file.</li>
@@ -515,27 +549,21 @@ the associated XML file.</li>
 \n€4 fee for all classes.  \nNo access to deluxe changing rooms.&quot;);</code></pre>
 <p>Ideally, this data would be read in from a file, however, we can just hard-code them for the purposes of this assignment.</p>
 <p>Note 3. The options on the progress sub-menu should ideally display the member’s progress based on the metric chosen (e.g. weight). It should display the metric sorted by date and some form of indication as to whether the subsequent measurement was above or below the previous measurement.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Unit Tests">
-              <h2>Unit tests.</h2>
+</li>
+      
+        <li> <h2>Unit tests.</h2>
 <p>As noted earlier, the menu controller exercises only a portion of the API&#39;s feature set. For this reason, a full suite of unit test will be provided to prove the entire API and utility classes. You are not required to edit or indeed understand the test code as it was not part of the curriculum. You are simply required to run the tests and fix any logic errors it reports in your code - as illustrated in the lab exercise earlier. The test execution output is presented in a &#39;GIVEN-WHEN-THEN&#39; fashion and will identify the specific class method with the bug as well as the conditions that produced it. </p>
 <p>The starter pack provided in the first section of this specification has the test required for the <em>Pass</em> mark level in the grading spectrum. Only the <code>GymAPUTest</code> and <code>MemberTest</code> files are relevant for this level. Tests for the higher grades will be provided incrementally over the duration of the assignment. </p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Grading Spectrum">
-              <h2>Grading spectrum.</h2>
+</li>
+      
+        <li> <h2>Grading spectrum.</h2>
 <p>Pass (40-50) - Data Model: Basic implementation (Person, Member and Trainer). API: Add members/trainers, numberofMembers/Trainers methods, isValidMember/TrainerIndex methods, basic addMember/Trainer. Menu: Registration, Add New member, List all members. Input validation.</p>
 <p>Good (50-65) - API: Various Search methods (by email and name),   ; XML persistence. Menu: Login, Trainer and Member sub-menus, (Trainer) Add/List/Search members, (Member) View/update profile. </p>
 <p>Excellent (65-85) - Data Model: Assessment class basic support. API:  Utility class. Menu: (Trainer) Add assessment, Update assessment comment. Most unit tests pass</p>
 <p>Outstanding (85-100) - Data model: Student and Premium Member support; Member assessment query support. API: Fully-featured. Menu: (Member) Progress sub-menu options; Fully-featured. All unit tests pass.</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Submission">
-              <h2>Handup of submission</h2>
+</li>
+      
+        <li> <h2>Handup of submission</h2>
 <h3>When</h3>
 <p>The submission is due  Sunday, 20th May 2018, 11.55PM.</p>
 <p>No late submissions will be accepted (unless mitigating circumstances, with supporting documentation, apply).</p>
@@ -558,67 +586,8 @@ non-standard Libraries used
 Known bugs/problems:
 
 Any sources referred to during the development of the assignment (no need to reference lecture/lab materials):</code></pre>
-
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <script>
-      $(document).on('keydown', function(e) {
-  e = e || window.event;
-  var nextTab;
-  switch (e.which || e.keyCode) {
-    case 37: // left
-      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-
-    case 39: // right
-      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-  }
-});
-
-      $(document).ready(function() {
-  $('img').addClass('ui image');
-
-  $('.ui.embed').embed();
-
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
-
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
-
-  $('.popup').popup();
-
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
-
-    </script>
-  </body>
-</html>
+</li>
+      
+    </ul>
+  </div>
+</body>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,333 +7,369 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      
+  </head>
+  <style>
+    
 
-body
-{
+body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
 }
 
-figcaption
-{
-  margin-bottom: 20px;
+p {
+  margin: 0.5em;
 }
 
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-code
-{
+pre code {
   font-family: "Monaco";
-  font-size: 110%;
+  font-size: 100%;
 }
 
-img
-{
-  padding:1px;
-  border:1px solid black;
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1
-{
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
   font-style:italic;
   font-size:130%;
-  border-bottom:thin solid black;
 }
 
-h2
-{
+h2 {
   font-size:110%;
-  border-bottom: thin solid black;
 }
 
-h3
-{
+h3 {
   font-size:100%;
-  border-bottom: thin solid black;
-}
-
-body
-{
-  overflow-y: scroll;
-}
-
-.pushable > .pusher
-{
-  padding-bottom: 1.5rem;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
 }
 
 
 
-    </style>
-  </head>
+  </style>
+<body>
 
-  <body>
-    
-    
-
-    <div class="ui fixed top pointing inverted stackable menu labmenu">
-      <header class="header item">
-        <i id="toc" class="sitemap icon"></i>
-        <a href="../index.html">
-           4b: Classes (Part 2) 
-        </a>
-      </header>
-      <div class="right tab-menu menu">
-        
-          <a class="item" data-tab="Lab-04b">
-            Lab-04b
-          </a>
-        
-          <a class="item" data-tab="01">
-            01
-          </a>
-        
-          <a class="item" data-tab="02">
-            02
-          </a>
-        
-          <a class="item" data-tab="03">
-            03
-          </a>
-        
-          <a class="item" data-tab="04">
-            04
-          </a>
-        
-          <a class="item" data-tab="05">
-            05
-          </a>
-        
-          <a class="item" data-tab="Exercise">
-            Exercise
-          </a>
-        
-          <a class="item" data-tab="Challenge">
-            Challenge
-          </a>
-        
-          <a class="item" data-tab="Solutions">
-            Solutions
-          </a>
-        
-        <div class="item">
+  
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
           
-        </div>
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment-1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment-2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment 3
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Induction
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-04a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-04b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06d
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment 3 Prerequisite
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12
+                </a>
+              </li>
+            
+          
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="ui segment pushable">
-      <div class="ui inverted labeled icon left inline vertical sidebar menu">
-        <br><br>
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-1/index.html">
-              Assignment-1
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-2/index.html">
-              Assignment-2
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-3/index.html">
-              Assignment 3
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00b-induction/book-induction/index.html">
-              Induction
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic01a-intro-to-processing/book-1a/index.html">
-              Lab-1a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic01b-animate-your-drawings/book-1b/index.html">
-              Lab-1b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02a-if-stmt-and-events/book/index.html">
-              Lab-02a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
-              Lab-02b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03a-methods/book/index.html">
-              Lab-03a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03b-more-on-methods/book/index.html">
-              Lab-03b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04a-strings-and-intro-to-classes/book/index.html">
-              Lab-04a
-            </a>
-          
-        
-          
-            <a class="active item" href="../../topic04b-classes-encapsulation/book/index.html">
-              Lab-04b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05a-swing-and-arrays/book/index.html">
-              Lab-05a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05b-arrays-and-classes/book/index.html">
-              Lab-05b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v1-v2/index.html">
-              Lab-06a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v3-v4-v5/index.html">
-              Lab-06b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v6-v7-v8/index.html">
-              Lab-06c
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v9/index.html">
-              Lab-06d
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
-              Lab-07a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-IntelliJ-JVM-and-IO/book-b/index.html">
-              Lab-07b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-grouping-objects/book-1/index.html">
-              Lab-08a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-grouping-objects/book-2/index.html">
-              Lab-08b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-1/index.html">
-              Lab-09a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-2/index.html">
-              Lab-09b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-3/index.html">
-              Assignment 3 Prerequisite
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic10-persistence-xml-exceptions/book/index.html">
-              Lab-10
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic11-inher-polym/book/index.html">
-              Lab-11
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic12-collections-map-set/book/index.html">
-              Lab-12
-            </a>
-          
-        
+
+  <div uk-sticky>
+    <nav uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
+          <li class="uk-active"><a href="../index.html"> 4b: Classes (Part 2) </a></li>
+        </ul>
       </div>
-      <div class="pusher" tabindex="-1">
-        <div class="ui basic segment" id="labchat">
-          <br>
-          
-            <div  class="ui tab segment lab" data-tab="Lab-04b">
-              <h1>Objectives</h1>
-<p>classes · methods · behaviour · overloading · validation · this · encapsulation · access modifiers · accessors · mutators </p>
 
-            </div>
+
+      <div class="uk-navbar-right">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
           
-            <div  class="ui tab segment lab" data-tab="01">
-              <h1>Adding behaviour (methods) to Spot</h1>
+            <li><a href="#">Lab-04b</a></li>
+          
+            <li><a href="#">01</a></li>
+          
+            <li><a href="#">02</a></li>
+          
+            <li><a href="#">03</a></li>
+          
+            <li><a href="#">04</a></li>
+          
+            <li><a href="#">05</a></li>
+          
+            <li><a href="#">Exercise</a></li>
+          
+            <li><a href="#">Challenge</a></li>
+          
+            <li><a href="#">Solutions</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="uk-container uk-container-expand">
+    <ul class="uk-switcher switcher-container">
+      
+        <li> <h1>Objectives</h1>
+<p>classes · methods · behaviour · overloading · validation · this · encapsulation · access modifiers · accessors · mutators </p>
+</li>
+      
+        <li> <h1>Adding behaviour (methods) to Spot</h1>
 <p>We have seen how the fields are used in classes (i.e. xCoord, yCoord, diameter).
 We now look at the behaviour (methods) in classes.    </p>
 <p><strong>Note:</strong>  The version of Spot below doesn&#39;t enforce the encapsulation rules yet.  We will implement these rules in SpotV7.0 (consistent with how we did it in lectures).  We will bring in Encapsulation in Step04 of this lab when we add the accessors and mutators.</p>
@@ -377,11 +415,9 @@ void draw()
 <p>Run your code.  You should get the following output:</p>
 <p><img src="./img/01.png" alt="Drawing spot using display method"></p>
 <p>Save your work (don&#39;t close the project though).</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="02">
-              <h1>Adding behaviour (methods) to Spot</h1>
+</li>
+      
+        <li> <h1>Adding behaviour (methods) to Spot</h1>
 <p>We will continue looking at the behaviour (methods) in classes.    </p>
 <p><strong>Note:</strong>  The version of Spot below doesn&#39;t enforce the encapsulation rules yet.  We will implement these rules in SpotV7.0 (consistent with how we did it in lectures).  We will bring in Encapsulation in Step04 of this lab when we add the accessors and mutators.</p>
 <h2>Spot V5.0 - colour() method</h2>
@@ -532,11 +568,9 @@ void draw()
    }
 }</code></pre>
 <p>Save your work (don&#39;t close the project though).</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="03">
-              <h1>Spot V6.x</h1>
+</li>
+      
+        <li> <h1>Spot V6.x</h1>
 <p>In this step, we will introduce the <em>move</em> method and also start using the <em>this</em> keyword.</p>
 <p><strong>Note:</strong>  The version of Spot below doesn&#39;t enforce the encapsulation rules yet.  We will implement these rules in SpotV7.0 (consistent with how we did it in lectures).  We will bring in Encapsulation in Step04 of this lab when we add the accessors and mutators.</p>
 <h2>Spot V6.0 - Adding a move() method</h2>
@@ -629,11 +663,9 @@ void draw()
 <p>No other changes are necessary.</p>
 <p>Run your code.  It should behave in the same way at V6.0 above.</p>
 <p>Save your work (don&#39;t close the project though).</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="04">
-              <h1>Setters and Getters</h1>
+</li>
+      
+        <li> <h1>Setters and Getters</h1>
 <p>In this step, we will make the fields in Spot private and then introduce the <em>setter</em> and <em>getter</em> methods.  This will allow us implement the encapsulation rules in our class.  </p>
 <h2>Spot V7.0</h2>
 <p>Save your <strong>Spot_Version6_1</strong> work as <strong>Spot_Version7_0</strong>.</p>
@@ -795,11 +827,9 @@ void draw()
 After setter, the value of the diameter is 40.0</code></pre>
 <p>Have a look at your code.  Are you happy that you understand how this output was produced? </p>
 <p>Save your work (don&#39;t close the project though).</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="05">
-              <h1>Setters and Getters - validations</h1>
+</li>
+      
+        <li> <h1>Setters and Getters - validations</h1>
 <p>In this step, we will add some validation to our diameter field.</p>
 <h2>Spot V7.1 - Using validation in <strong>constructors</strong></h2>
 <p>Save your <strong>Spot_Version7_0</strong> work as <strong>Spot_Version7_1</strong>.</p>
@@ -963,11 +993,9 @@ After setter, the value of the diameter is 20.0</code></pre>
 <h2>Repeating code...</h2>
 <p>You may have noticed that we have repeated the same validation in many places in the above code.  This is not the best approach at all.  What would happen if we decided to change the diameter boundaries of the Spot from 20:50 to 20:100?  You would have to <em>remember</em> to change it in four places.  That&#39;s a lot of remembering and this is where bugs sneak in...what if we forgot to change one of the checks?   </p>
 <p>A key mantra to remember when coding...use the <strong>DRY</strong> approach...<strong>Don&#39;t Repeat Yourself</strong>.  However, we have a bit of work to do before we move down this path.  Later in the module, we will show a different approach to avoid this scenario and adhere to DRY principles.   </p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Exercise">
-              <h1>Exercise</h1>
+</li>
+      
+        <li> <h1>Exercise</h1>
 <h2>Exercise 1</h2>
 <p>Using <a href="archives/Spot_Version7_1.zip">Spot Version 7.1</a> as a starting point, save this as <strong>lab04b_exercise_01</strong>.</p>
 <p>Implement these validation rules in the relevant constructors and setters:</p>
@@ -979,86 +1007,23 @@ After setter, the value of the diameter is 20.0</code></pre>
 <p>For testing, use the same appraoch we applied to testing the diameter validation.</p>
 <h2>DRY principle</h2>
 <p>Now you can really see how we have repeated ourselves throughout our code.  As we become more familiar with Java, we will working on writing utility / helper methods to reduce this repetition!  </p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Challenge">
-              <h1>Challenge</h1>
+</li>
+      
+        <li> <h1>Challenge</h1>
 <h2>Challenge 1</h2>
 <p>Using your latest working version of the Spot project as a starting point <a href="archives/lab04b_exercise_01.zip">or our solution to the previous exercise</a>, save it as <strong>lab04b_challenge_01</strong>.</p>
 <p>In Spot, write a method called <strong>grow</strong> that takes in one float parameter (growthPixels).  The return type of this method is void.  </p>
 <p>In the <em>main</em> tab, in the draw method, call the <strong>grow</strong> method, passing out a value as a parameter.</p>
 <p>Run your code.  If you passed a positive number in grow, you should see your circle growing each time the draw() method is called, if you passed a negative value, you should see your circle shrinking.  To verfiy that the diameter is changing, you could print out the value stored in it (using getDiameter).</p>
 <p>Data Integrity:  Did you consider data integrity when writing the draw method?  What we mean by this is...else where in the Spot class, we restricted the diameter to a range of 20 to 50 inclusive.  Did you remember to do this in the new method, <em>grow</em>?  If not, refactor your method to make sure that the diameter doesn&#39;t breach these bounds.  </p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Solutions">
-              <h1>Solutions</h1>
+</li>
+      
+        <li> <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab04b_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
-
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <script>
-      $(document).on('keydown', function(e) {
-  e = e || window.event;
-  var nextTab;
-  switch (e.which || e.keyCode) {
-    case 37: // left
-      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-
-    case 39: // right
-      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-  }
-});
-
-      $(document).ready(function() {
-  $('img').addClass('ui image');
-
-  $('.ui.embed').embed();
-
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
-
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
-
-  $('.popup').popup();
-
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
-
-    </script>
-  </body>
-</html>
+</li>
+      
+    </ul>
+  </div>
+</body>

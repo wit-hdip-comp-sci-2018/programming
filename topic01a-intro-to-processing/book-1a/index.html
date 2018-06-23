@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,329 +7,367 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <style>
-      
+  </head>
+  <style>
+    
 
-body
-{
+body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
+  font-size:90%;
+  color: black;
 }
 
-figcaption
-{
-  margin-bottom: 20px;
+p {
+  margin: 0.5em;
 }
 
-.vertical-align
-{
-  display: flex;
-  align-items: center;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
-}
-
-code
-{
+pre code {
   font-family: "Monaco";
-  font-size: 110%;
+  font-size: 100%;
 }
 
-img
-{
-  padding:1px;
-  border:1px solid black;
+img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-h1
-{
+h1, h2, h3 {
+  border-bottom:thin solid black;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+h1 {
   font-style:italic;
   font-size:130%;
-  border-bottom:thin solid black;
 }
 
-h2
-{
+h2 {
   font-size:110%;
-  border-bottom: thin solid black;
 }
 
-h3
-{
+h3 {
   font-size:100%;
-  border-bottom: thin solid black;
-}
-
-body
-{
-  overflow-y: scroll;
-}
-
-.pushable > .pusher
-{
-  padding-bottom: 1.5rem;
-}
-
-.ui.segment.pushable
-{
-  margin: 0;
-  padding: 1rem 0;
-  overflow: visible;
 }
 
 
 
-    </style>
-  </head>
+  </style>
+<body>
 
-  <body>
-    
-    
-
-    <div class="ui fixed top pointing inverted stackable menu labmenu">
-      <header class="header item">
-        <i id="toc" class="sitemap icon"></i>
-        <a href="../index.html">
-           1a: Introduction to Processing 
-        </a>
-      </header>
-      <div class="right tab-menu menu">
-        
-          <a class="item" data-tab="Lab-1a">
-            Lab-1a
-          </a>
-        
-          <a class="item" data-tab="Advice">
-            Advice
-          </a>
-        
-          <a class="item" data-tab="PDE">
-            PDE
-          </a>
-        
-          <a class="item" data-tab="01">
-            01
-          </a>
-        
-          <a class="item" data-tab="02">
-            02
-          </a>
-        
-          <a class="item" data-tab="03">
-            03
-          </a>
-        
-          <a class="item" data-tab="Exercises">
-            Exercises
-          </a>
-        
-          <a class="item" data-tab="Solutions">
-            Solutions
-          </a>
-        
-        <div class="item">
+  
+  <div class="uk-offcanvas-content">
+    <div id="offcanvas-usage" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav">
           
-        </div>
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment-1
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment-2
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment 3
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Induction
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-1b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-02b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-03b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-04a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-04b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-05b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06c
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-06d
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-07b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-08b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09a
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-09b
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Assignment 3 Prerequisite
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-10
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-11
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">
+  <i class="fas fa-flask " style="color:#00BCD4"> </i>
+Lab-12
+                </a>
+              </li>
+            
+          
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="ui segment pushable">
-      <div class="ui inverted labeled icon left inline vertical sidebar menu">
-        <br><br>
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-1/index.html">
-              Assignment-1
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-2/index.html">
-              Assignment-2
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00a-assignments/book-assignment-3/index.html">
-              Assignment 3
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic00b-induction/book-induction/index.html">
-              Induction
-            </a>
-          
-        
-          
-            <a class="active item" href="../../topic01a-intro-to-processing/book-1a/index.html">
-              Lab-1a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic01b-animate-your-drawings/book-1b/index.html">
-              Lab-1b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02a-if-stmt-and-events/book/index.html">
-              Lab-02a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic02b-iteration-for-while/book/index.html">
-              Lab-02b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03a-methods/book/index.html">
-              Lab-03a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic03b-more-on-methods/book/index.html">
-              Lab-03b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04a-strings-and-intro-to-classes/book/index.html">
-              Lab-04a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic04b-classes-encapsulation/book/index.html">
-              Lab-04b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05a-swing-and-arrays/book/index.html">
-              Lab-05a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic05b-arrays-and-classes/book/index.html">
-              Lab-05b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v1-v2/index.html">
-              Lab-06a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v3-v4-v5/index.html">
-              Lab-06b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v6-v7-v8/index.html">
-              Lab-06c
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic06-pong/book-v9/index.html">
-              Lab-06d
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
-              Lab-07a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic07-IntelliJ-JVM-and-IO/book-b/index.html">
-              Lab-07b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-grouping-objects/book-1/index.html">
-              Lab-08a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic08-grouping-objects/book-2/index.html">
-              Lab-08b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-1/index.html">
-              Lab-09a
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-2/index.html">
-              Lab-09b
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic09-menu-and-crud/book-3/index.html">
-              Assignment 3 Prerequisite
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic10-persistence-xml-exceptions/book/index.html">
-              Lab-10
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic11-inher-polym/book/index.html">
-              Lab-11
-            </a>
-          
-        
-          
-            <a class="item" href="../../topic12-collections-map-set/book/index.html">
-              Lab-12
-            </a>
-          
-        
+
+  <div uk-sticky>
+    <nav uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
+          <li class="uk-active"><a href="../index.html"> 1a: Introduction to Processing </a></li>
+        </ul>
       </div>
-      <div class="pusher" tabindex="-1">
-        <div class="ui basic segment" id="labchat">
-          <br>
-          
-            <div  class="ui tab segment lab" data-tab="Lab-1a">
-              <h1>Objectives</h1>
-<p>static drawings · basic shapes · colour · grayscale · RGB</p>
 
-            </div>
+
+      <div class="uk-navbar-right">
+        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
           
-            <div  class="ui tab segment lab" data-tab="Advice">
-              <h1>Lab advice</h1>
+            <li><a href="#">Lab-1a</a></li>
+          
+            <li><a href="#">Advice</a></li>
+          
+            <li><a href="#">PDE</a></li>
+          
+            <li><a href="#">01</a></li>
+          
+            <li><a href="#">02</a></li>
+          
+            <li><a href="#">03</a></li>
+          
+            <li><a href="#">Exercises</a></li>
+          
+            <li><a href="#">Solutions</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="uk-container uk-container-expand">
+    <ul class="uk-switcher switcher-container">
+      
+        <li> <h1>Objectives</h1>
+<p>static drawings · basic shapes · colour · grayscale · RGB</p>
+</li>
+      
+        <li> <h1>Lab advice</h1>
 <ul>
 <li><p>Your labs are not a race to be the first student finished.</p>
 </li>
@@ -343,22 +383,18 @@ body
 <li><p>The more mistakes you make when working through these labs, the more you learn.  If you reach the end of the lab and you haven&#39;t made any mistakes, a good learning exercise would be to try to produce syntax / logic errors and troubleshoot them. </p>
 </li>
 </ul>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="PDE">
-              <h1>Opening the PDE (Processing Development Environment)</h1>
+</li>
+      
+        <li> <h1>Opening the PDE (Processing Development Environment)</h1>
 <p>Go to the directory/folder where you installed your processing app.  </p>
 <p>You should see a list of files and folders similiar to the image below:</p>
 <p><img src="./img/04.png" alt="Processing Development Environment files"></p>
 <p>Double click in the <strong>processing</strong> application (highlighted by the red rectangle).</p>
 <p>The PDE (Processing Development Environment) should launch.</p>
 <p><img src="./img/05.png" alt="The Processing Development Environment"></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="01">
-              <h1>Exercise 1 - Induction</h1>
+</li>
+      
+        <li> <h1>Exercise 1 - Induction</h1>
 <p>In exercise 1, we started with this code:</p>
 <pre><code class="lang-java">//Setting up the display window
 size(400,300);
@@ -403,11 +439,9 @@ ellipse(200,100,20,60);
 //Drawing an circle
 ellipse(250,130,25,25);</code></pre>
 <p>Notice that the only changes were the values of the <strong>actual parameters</strong> passed to the functions. </p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="02">
-              <h1>Using RBG for display window background</h1>
+</li>
+      
+        <li> <h1>Using RBG for display window background</h1>
 <p>In the Induction, Exercise 1, we used the Grayscale colour scheme to colour our background:</p>
 <p><img src="./img/07.png" alt="Induction Exercise 1 - solution output"></p>
 <pre><code class="lang-java">//Setting up the display window
@@ -447,11 +481,9 @@ ellipse(250,130,25,25);</code></pre>
 <p>For example, we chose a light blue:  </p>
 <pre><code>    background(190,240,245);</code></pre>
 <p><img src="./img/08.png" alt="Setting an RGB background for the display window"></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="03">
-              <h1>Changing the look of the shapes</h1>
+</li>
+      
+        <li> <h1>Changing the look of the shapes</h1>
 <p>In this step, we will look at colouring in the shapes we have just drawn and also changing their outline.</p>
 <h2>fill() function</h2>
 <p>The fill() function fills shapes with a chosen colour.  We will use the RGB colours to select a colour.  All shapes that are drawn after the <strong>fill</strong> function is called, will be filled with the chosen colour.  </p>
@@ -497,11 +529,9 @@ ellipse(250,130,25,25);</code></pre>
 <pre><code>    strokeWeight(3);</code></pre>
 <p>Your output should look similar to this:</p>
 <p><img src="./img/12.png" alt="Playing with stroke weight"></p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Exercises">
-              <h1>Exercises</h1>
+</li>
+      
+        <li> <h1>Exercises</h1>
 <ul>
 <li><p>The exercises are typically based on the functions we covered in the previous steps in this lab (and the associated lectures).</p>
 </li>
@@ -530,75 +560,14 @@ ellipse(250,130,25,25);</code></pre>
 <p>Hint: you will need to read up on the triangle() function on the <a href="https://processing.org/reference/triangle_.html">Processing website</a>.</p>
 <h2>Challenge 2</h2>
 <p>Draw any picture you fancy as your profile picture for social media.  No need to actually change your profile picture, just play around with drawing one!</p>
-
-            </div>
-          
-            <div  class="ui tab segment lab" data-tab="Solutions">
-              <h1>Solutions</h1>
+</li>
+      
+        <li> <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab01a_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
-
-            </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <script>
-      $(document).on('keydown', function(e) {
-  e = e || window.event;
-  var nextTab;
-  switch (e.which || e.keyCode) {
-    case 37: // left
-      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-
-    case 39: // right
-      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
-      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
-      nextTab.click();
-      $('.pusher').focus();
-      break;
-  }
-});
-
-      $(document).ready(function() {
-  $('img').addClass('ui image');
-
-  $('.ui.embed').embed();
-
-  const $images = $('.lab img');
-  jQuery.each($images, function(i) {
-    if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass(
-        'ui basic segment',
-      );
-      $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass(
-        'ui blue ribbon label',
-      );
-      divLabel.append($images[i].alt);
-      $(divLabel).insertBefore($images[i]);
-    }
-  });
-
-  $('.ui.menu .item').tab({
-    history: true,
-    historyType: 'hash',
-  });
-
-  $('.popup').popup();
-
-  $('.ui.sidebar')
-    .sidebar({ context: $('.pushable') })
-    .sidebar('setting', 'transition', 'slide out')
-    .sidebar('attach events', '#toc');
-});
-
-    </script>
-  </body>
-</html>
+</li>
+      
+    </ul>
+  </div>
+</body>
