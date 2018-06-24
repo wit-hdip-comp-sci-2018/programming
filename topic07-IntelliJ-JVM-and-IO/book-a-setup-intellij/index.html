@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,45 +330,47 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">7: IntelliJ and Basic I/O </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>7: IntelliJ and Basic I/O </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-07a</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-07a</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Install JDK 8 + IntelliJ Idea</p>
 </li>
-      
-        <li> <h1>Preparation</h1>
+        
+          <li> <h1>Preparation</h1>
 <p>For this lab you need to be reasonably comfortable with the command prompt + explorer - or finder/terminal on a Mac.</p>
 <p>We have reviewed these in <a href="https://wit-hdip-comp-sci-2018.github.io/web-development/topic05-templating/book-01-harp/index.html">Lab05a</a> in the <a href="https://wit-hdip-comp-sci-2018.github.io/web-development/topic05-templating/index.html">Web Development Deployment Topic</a></p>
 <h2>Command Prompt</h2>
@@ -381,8 +386,8 @@ Lab-12
 <h2>Mac</h2>
 <p>The equivalents on Mac are the Finder and the Terminal.</p>
 </li>
-      
-        <li> <h1>Install Java JDK: Windows</h1>
+        
+          <li> <h1>Install Java JDK: Windows</h1>
 <p>Visit this page:</p>
 <ul>
 <li><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></li>
@@ -415,8 +420,8 @@ brew cask install caskroom/versions/java8</code></pre>
 <p><img src="img/49.png" alt=""></p>
 <p>If there is a version 9 (not shown here) then try to manually delete it.</p>
 </li>
-      
-        <li> <h1>Install IntelliJ Idea</h1>
+        
+          <li> <h1>Install IntelliJ Idea</h1>
 <p>To date we have been using Sublime Text as our primary editor. While we can continue to use it, we will supplement our tool set with a professional Java Integrated Development Environment (IDE) called Idea:</p>
 <ul>
 <li><a href="https://www.jetbrains.com/idea">https://www.jetbrains.com/idea</a></li>
@@ -437,8 +442,8 @@ brew cask install caskroom/versions/java8</code></pre>
 <p>This should activate the application, and you will get to the opening screen:</p>
 <p><img src="img/18.png" alt=""></p>
 </li>
-      
-        <li> <h1>Hello World</h1>
+        
+          <li> <h1>Hello World</h1>
 <p>To create a project - select Create New Project</p>
 <p><img src="img/53.png" alt=""></p>
 <p>Press next - and the select <code>Java Hello World App</code></p>
@@ -456,8 +461,8 @@ brew cask install caskroom/versions/java8</code></pre>
 <p>This will toggle some aspects of the display:</p>
 <p><img src="img/66.png" alt=""></p>
 </li>
-      
-        <li> <h1>Exploring the Project View</h1>
+        
+          <li> <h1>Exploring the Project View</h1>
 <p>In IntelliJ, take a close look at the project window:</p>
 <p><img src="img/61.png" alt=""></p>
 <p>Try to expand the view so that it looks like this:</p>
@@ -474,14 +479,33 @@ brew cask install caskroom/versions/java8</code></pre>
 </ul>
 <p>In general, you will be happy to work with the Packages (logical) view. As you gain more experience, and the projects become more sophisticated, you may occasionally need to view the Project (physical) view.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <h2>Exercise 1:</h2>
 <p>Examine the Hello World project folder in Explore/Finder - and compare the contents with the view presented in Idea.</p>
 <h2>Exercise 2:</h2>
 <p>Create another new project - like Hello World - but give the project a different name. Get used to having more than one project open at a time.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

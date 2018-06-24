@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,43 +330,45 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 10: Persistence (XML & Exceptions) </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 10: Persistence (XML & Exceptions) </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-10</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-10</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>XML · Exception Handling · Validate User Input · ShopV5.0 · DVD3.0</p>
 </li>
-      
-        <li> <h1>Developing Shop V5.0</h1>
+        
+          <li> <h1>Developing Shop V5.0</h1>
 <p>In this practical, you will create a new project called ShopV5.0, based on ShopV4.0.  You will update the Driver, Store and Product classes (linked below) to enable the user to save the products to an XML file and also reload them (see Figure 1 for the updated menu system).</p>
 <p><img src="./img/00.png" alt="Figure 1: Menu System for ShopV5.0"> </p>
 <h2>Menu Items 9 and 10:  Saving and Loading Products</h2>
@@ -452,8 +457,8 @@ Is this product in your current line (y/n): y</code></pre>
 <p>Exit your application and run it again.</p>
 <p>Test option 10 and make sure that the saved products are loaded back into your products ArrayList correctly.</p>
 </li>
-      
-        <li> <h1>Java 9 and XStream</h1>
+        
+          <li> <h1>Java 9 and XStream</h1>
 <p><em>This step ONLY applies if you are using JDK9.  If you are using JDK8 or lower, you can move onto the next step.  Chances are the majority of you are using JDK8.</em></p>
 <p>If you are using JDK9, you are more than likely getting the following warning when saving your products:</p>
 <p><img src="./img/error01.png" alt="Warning when saving XML file with JDK9">  </p>
@@ -478,16 +483,16 @@ Is this product in your current line (y/n): y</code></pre>
 <h2>A note on XStream and Java</h2>
 <p>Java 9 was released in September 2017.  However, the latest version of XStream (1.4.10) was released in May 2017, before the latest Java changes.  When a new version of XStream is released, we probably won&#39;t have to pass these parameters to the VM.</p>
 </li>
-      
-        <li> <h1>Shop V5.0 - Exceptions</h1>
+        
+          <li> <h1>Shop V5.0 - Exceptions</h1>
 <p>In this practical, you will continue working on Shop V5.0. </p>
 <h2>Adding Exception Handling</h2>
 <p>In the Driver class, put a try and catch block around each potential read of data that could throw an exception (nextLine() and next() are ok).</p>
 <p>Revisit your lecture notes on this topic if you need guidance.</p>
 <p>Run your program and test your user input to ensure that your exception handling is correctly implemented e.g. enter String data when a double or int is expected.   </p>
 </li>
-      
-        <li> <h1>Menu Driven DVD Specification (Phase 3)</h1>
+        
+          <li> <h1>Menu Driven DVD Specification (Phase 3)</h1>
 <p>In this practical, you will create a new project and copy in the code from <strong>DVDLibraryV2.0</strong>.  You will then extend the code to allow the user to save the DVDs to an XML file and to load the DVDs from an XML file. </p>
 <ul>
 <li><p>Create a new project called <strong>DVDLibraryV3.0</strong>.</p>
@@ -544,12 +549,31 @@ Is this product in your current line (y/n): y</code></pre>
 <h2>Exceptions</h2>
 <p>Each time you read in an int in the Driver class, add a try and catch so that your program won&#39;t crash if you enter a non-numeric value.</p>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <p>The solution to the ShopV5.0 exercise <a href="archives/ShopV5.0.zip">is here</a>.</p>
 <p>The solution to DVD phase 3 <a href="archives/DVDLibraryV3.0.zip">is here</a>.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,47 +330,49 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 9: Menu Driven Apps and Persistence </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 9: Menu Driven Apps and Persistence </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-09a</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-09a</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Collections · Generic Classes · ArrayList · loops · for each loop · Menu Driven Apps</p>
 </li>
-      
-        <li> <h1>Starting ShopV3.0</h1>
+        
+          <li> <h1>Starting ShopV3.0</h1>
 <p>In this step, you will use the ShopV2.1 solution as a starting point for Shop V3.0.  In this version:</p>
 <ul>
 <li><p>you will remove the primitive array and use an ArrayList instead.</p>
@@ -383,8 +388,8 @@ Lab-12
 <h2>Test the code base</h2>
 <p>Run your version of ShopV3.0 to both test it and also familiarise yourself with the project. </p>
 </li>
-      
-        <li> <h1>Refactoring the Store Class</h1>
+        
+          <li> <h1>Refactoring the Store Class</h1>
 <p>In this step, you will refactor (change) the Store class so that it no longer uses a primitive array, but uses an ArrayList instead.</p>
 <h2>Import the ArrayList class</h2>
 <p>To use the ArrayList in our Store class, we need to import it:</p>
@@ -506,8 +511,8 @@ Lab-12
 <h2>isEmpty and isFull methods</h2>
 <p>There is no need for these methods when using ArrayLists, so you can simply delete them.</p>
 </li>
-      
-        <li> <h1>Refactoring the Driver Class</h1>
+        
+          <li> <h1>Refactoring the Driver Class</h1>
 <p>In this step, you will refactor (change) the Driver class so that any changes we made to the <strong>Interface</strong> of the Store class are reflected in this class.</p>
 <h2>Store Constructor</h2>
 <p>The only change that we made to the <strong>Interface</strong> of the Store class is the Store Constructor.</p>
@@ -526,8 +531,8 @@ Lab-12
 <p>Your output should look similar to this:</p>
 <p><img src="./img/06.PNG" alt="Output from ShopV3.0 - no menu"></p>
 </li>
-      
-        <li> <h1>Menu Driven App</h1>
+        
+          <li> <h1>Menu Driven App</h1>
 <p>At this stage, you should have refactored ShopV3.0 so that it uses an ArrayList instead of a primitive array.  If you had difficulty with it, <a href="./archives/ShopV3.0-InterimSolution.zip">here is an interim solution</a> that you can use for the rest of this lab.</p>
 <p>You will notice in our code that we are still asking the user how many products they want to add.  This is very restrictive for a user; they cannot add more products later on.  Our app also doesn&#39;t allow them to choose what items they would like to list, etc.  The user has no level of control over our system.</p>
 <p>For this reason, we are going to add a menu to our console app so the user can choose what they would like to do with their products:</p>
@@ -653,8 +658,8 @@ Lab-12
 <p>Test the menu with some of your own products and see if you can identify any bugs.  If you come across any, try fix them.</p>
 <p>Before moving onto the next step, it is a good idea to familiarise yourself with the code in both the Store and the Driver class.  Note that we made no changes to the Product class. </p>
 </li>
-      
-        <li> <h1>Formatting decimal output</h1>
+        
+          <li> <h1>Formatting decimal output</h1>
 <p>Did you notice that the average product price is not limited to two decimal places?</p>
 <p><img src="./img/08.PNG" alt="Average product price"></p>
 <h2>toTwoDecimalPlaces</h2>
@@ -693,8 +698,8 @@ Lab-12
     }</code></pre>
 <p>Make this change and test your app to make sure your result is truncated to two decimal places.</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <p>Over the next few weeks, we will use the knowledge we glean from the <strong>Shop</strong> project to build a Menu Driven <strong>DVDLibrary</strong> app.  </p>
 <p>Today, you will work on Phase 1 of this DVDLibrary application; it presents the user with a simple menu for adding and listing DVD titles.</p>
 <h1>Menu Driven DVD app - phase 1</h1>
@@ -792,14 +797,33 @@ Lab-12
 <p>Test by adding a series of DVDs and listing them.  </p>
 <p>Also try listing the DVDs when no DVDs have been entered (you can test this by restarting the application to clear any existing DVDs).</p>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <p><a href="archives/ShopV2.1.zip">ShopV2.1 from the previous lab</a></p>
 <p><a href="archives/ShopV3.0-InterimSolution.zip">ShopV3.0-InterimSolution</a></p>
 <p><a href="archives/ShopV3.0.zip">ShopV3.0</a></p>
 <p><a href="archives/DVDLibraryV1.0.zip">Exercise Solution - DVDLibraryV1.0</a></p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

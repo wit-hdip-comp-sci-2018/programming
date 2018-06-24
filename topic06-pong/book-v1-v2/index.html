@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,41 +330,43 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 6: Game of Pong </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 6: Game of Pong </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-06a</a></li>
+            
+              <li><a href="#">Pong</a></li>
+            
+              <li><a href="#">Architecture</a></li>
+            
+              <li><a href="#">V1</a></li>
+            
+              <li><a href="#">V2</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-06a</a></li>
-          
-            <li><a href="#">Pong</a></li>
-          
-            <li><a href="#">Architecture</a></li>
-          
-            <li><a href="#">V1</a></li>
-          
-            <li><a href="#">V2</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Game of Pong Architecture · Solutions for all versions · PongGame V1.0 · PongGameV2.0</p>
 </li>
-      
-        <li> <h1>The Game of Pong</h1>
+        
+          <li> <h1>The Game of Pong</h1>
 <p>In this section, we wil introduce the Game of Pong that we will build over the next few labs.</p>
 <h2>Tournament</h2>
 <p>In our version of Pong, the player enters into a tournament of games. </p>
@@ -410,8 +415,8 @@ Lab-12
 </ul>
 <p><img src="./img/06.png" alt="Tournament Over"></p>
 </li>
-      
-        <li> <h1>Architecture of Pong</h1>
+        
+          <li> <h1>Architecture of Pong</h1>
 <p>In the final version (V8.0) of Pong, there are four classes:</p>
 <ul>
 <li><p><strong>PongGame</strong> - has the setup() and draw() methods.  It starts the game, handles player input, manages collision detection between the Ball and the Paddle, ends the game and outputs the player statistics.</p>
@@ -451,8 +456,8 @@ Lab-12
 </ul>
 <p>The solutions for each of these versions can be downloaded from <a href="archives/game-of-pong-v1-to-v9.zip">here</a>. </p>
 </li>
-      
-        <li> <h1>PongGameV1.0</h1>
+        
+          <li> <h1>PongGameV1.0</h1>
 <p>Having read the lecture on PongGameV1.0 we will now develop it. </p>
 <p>Make sure that you read and understand the code below, while typing it into the Ball class.  If you have any questions on any part of the code, make sure to ask your lecturer.</p>
 <p><img src="./img/08.png" alt="PongGame V1.0"></p>
@@ -582,8 +587,8 @@ void draw(){
 <h2>Solution</h2>
 <p>If your code is not working, the solution can be found <a href="archives/PongGameV1_0.zip">here</a>.</p>
 </li>
-      
-        <li> <h1>PongGameV2.0</h1>
+        
+          <li> <h1>PongGameV2.0</h1>
 <p>Having read the lecture on PongGameV2.0 we will now develop it. </p>
 <p>Make sure that you read and understand the code below, while typing it into the Paddle class.  If you have any questions on any part of the code, make sure to ask your lecturer.</p>
 <p><img src="./img/09.png" alt="PongGame V2.0"></p>
@@ -714,7 +719,26 @@ void draw(){
 <h2>Solution</h2>
 <p>If your code is not working, the solution can be found <a href="archives/PongGameV2_0.zip">here</a>. </p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

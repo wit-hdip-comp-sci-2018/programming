@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,45 +330,47 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 9: Menu Driven Apps and Persistence </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 9: Menu Driven Apps and Persistence </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-09b</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">DVD 1.0</a></li>
+            
+              <li><a href="#">DVD 2.0</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-09b</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">DVD 1.0</a></li>
-          
-            <li><a href="#">DVD 2.0</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>CRUD · ShopV4.0 · DVDLibraryV2.0</p>
 </li>
-      
-        <li> <h1>Developing Shop V4.0</h1>
+        
+          <li> <h1>Developing Shop V4.0</h1>
 <p>In this practical, you will create a new project called ShopV4.0 in IntelliJ. You will add the Driver, Store and Product classes (linked below) to this project and amend the code so that it presents the user with the following simple menu for adding, listing, updating and deleting products (see Figure 1).</p>
 <p><img src="./img/01.png" alt="Figure 1: Menu System for ShopV4.0"> </p>
 <h2>Starting ShopV4.0</h2>
@@ -411,8 +416,8 @@ Lab-12
 </li>
 </ul>
 </li>
-      
-        <li> <h1>Developing Shop V4.0</h1>
+        
+          <li> <h1>Developing Shop V4.0</h1>
 <p>Continue working with ShopV4.0 in IntelliJ.  You will add the code to delete a product, using menu option 4.</p>
 <p><img src="./img/01.png" alt="Figure 1: Menu System for ShopV4.0"> </p>
 <h2>Store Class - getting ready for deleting</h2>
@@ -444,8 +449,8 @@ Lab-12
 </li>
 </ul>
 </li>
-      
-        <li> <h1>Developing Shop V4.0</h1>
+        
+          <li> <h1>Developing Shop V4.0</h1>
 <p>Continue working with ShopV4.0 in IntelliJ.  You will add the code to update a product, using menu option 3.</p>
 <p><img src="./img/01.png" alt="Figure 1: Menu System for ShopV4.0"> </p>
 <h2>Menu Item 3:  Updating a product</h2>
@@ -472,8 +477,8 @@ Lab-12
 </ul>
 <p>Save and close this project.  </p>
 </li>
-      
-        <li> <h1>Menu Driven DVD Specification (Phase 1)</h1>
+        
+          <li> <h1>Menu Driven DVD Specification (Phase 1)</h1>
 <p>In the previous practical, we worked on a new project called <strong>DVDLibraryV1.0</strong>.  This app presented the user with a simple menu for adding and listing DVD titles.  To refresh your memory on this project, please read the information below.</p>
 <h2>DVD class</h2>
 <p>The DVD class contained one instance field <strong>title</strong>, an empty default constructor and a getter and setter for the <strong>title</strong> field.  </p>
@@ -498,8 +503,8 @@ Lab-12
 <p>Run the DVD Phase 1 project.</p>
 <p>Test the code by adding a few DVD and listing them.  Try listing the DVDs when no DVDs have been entered (you can do this by restarting the app and listing without adding).</p>
 </li>
-      
-        <li> <h1>Menu Driven DVD Specification (Phase 2)</h1>
+        
+          <li> <h1>Menu Driven DVD Specification (Phase 2)</h1>
 <p>In this practical, you will create a new project in IntelliJ and copy in the code from <strong>DVDLibraryV1.0</strong>.  You will then extend the code to allow the user to update and delete DVDs. </p>
 <p>Create a new project called <strong>DVDLibraryV2.0</strong> and copy the <strong>src</strong> java files from <strong>DVDLibraryV1.0</strong> to the <strong>src</strong> folder in your new project,  <strong>DVDLibraryV2.0</strong>.</p>
 <p>NOTE:  a copy of the completed <strong>DVDLibraryV1.0</strong> <a href="archives/DVDLibraryV1.0.zip">is available here</a>.</p>
@@ -562,14 +567,33 @@ Lab-12
 </ul>
 <p>Save and close your project.</p>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <p>The solution to the ShopV4.0 exercise <a href="archives/ShopV4.0.zip">is here</a>.</p>
 <p>The solution to DVD phase 1 <a href="archives/DVDLibraryV1.0.zip">is here</a>.</p>
 <p>The solution to DVD phase 2 <a href="archives/DVDLibraryV2.0.zip">is here</a>.</p>
 <p>The code from the <a href="archives/code-from-debug-lecture.zip">debug lecture is here</a></p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,55 +330,57 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 2a: Selection and Events </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 2a: Selection and Events </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-02a</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">07</a></li>
+            
+              <li><a href="#">08</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+              <li><a href="#">Challenges</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-02a</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">07</a></li>
-          
-            <li><a href="#">08</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-            <li><a href="#">Challenges</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>animated drawings · conditional statements · relational operators · logical operators · variables · mouse events · key events</p>
 </li>
-      
-        <li> <h1>Conditional statements and boolean expressions</h1>
+        
+          <li> <h1>Conditional statements and boolean expressions</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <p>If the x coordinate of the mouse pointer is on the:</p>
 <ul>
@@ -409,8 +414,8 @@ void draw() {
 </ul>
 <p><img src="./img/01.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Conditional statements and boolean expressions</h1>
+        
+          <li> <h1>Conditional statements and boolean expressions</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <p>If the x coordinate of the mouse pointer is on the:</p>
 <ul>
@@ -447,8 +452,8 @@ void draw() {
 </ul>
 <p><img src="./img/02.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Conditional statements and logical operators</h1>
+        
+          <li> <h1>Conditional statements and logical operators</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <p>If the mouse pointer is:</p>
 <ul>
@@ -481,8 +486,8 @@ void draw() {
 </ul>
 <p><img src="./img/03.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Conditional statements and logical operators</h1>
+        
+          <li> <h1>Conditional statements and logical operators</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <ul>
 <li><p>If the mouse pointer is in the upper-left quadrant of the display window, draw a black rectangle covering the upper-left quadrant of the window.  </p>
@@ -516,8 +521,8 @@ void draw() {
 </ul>
 <p><img src="./img/04.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Mouse events</h1>
+        
+          <li> <h1>Mouse events</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <p>If the mouse is pressed:</p>
 <ul>
@@ -549,8 +554,8 @@ void draw() {
 </ul>
 <p><img src="./img/05.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Mouse events</h1>
+        
+          <li> <h1>Mouse events</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <p>If the mouse is pressed:</p>
 <ul>
@@ -581,8 +586,8 @@ void draw() {
 </ul>
 <p><img src="./img/06.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Mouse events</h1>
+        
+          <li> <h1>Mouse events</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <ul>
 <li><p>If the LEFT button on the mouse is pressed, set the fill to black and draw a square.  As soon as the LEFT button is released, gray fill the square.</p>
@@ -616,8 +621,8 @@ void draw() {
 </ul>
 <p><img src="./img/07.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Mouse events</h1>
+        
+          <li> <h1>Mouse events</h1>
 <p>In this step, we will implement an example from your lecture.</p>
 <ul>
 <li><p>Draw a circle on the mouse (x,y) coordinates.</p>
@@ -652,8 +657,8 @@ void draw() {
 </ul>
 <p><img src="./img/08.png" alt="Expected output"></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <ul>
 <li><p>For each exercise listed below, create a new sketch.</p>
 </li>
@@ -699,8 +704,8 @@ void draw() {
 </li>
 </ul>
 </li>
-      
-        <li> <h1>Challenges</h1>
+        
+          <li> <h1>Challenges</h1>
 <ul>
 <li><p>For each challenge listed below, create a new sketch.</p>
 </li>
@@ -741,13 +746,32 @@ void draw() {
 </li>
 </ul>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab02a_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

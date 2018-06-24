@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,45 +330,47 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 11: Inheritance and Polymorphism </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 11: Inheritance and Polymorphism </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-11</a></li>
+            
+              <li><a href="#">V1</a></li>
+            
+              <li><a href="#">V2</a></li>
+            
+              <li><a href="#">V3</a></li>
+            
+              <li><a href="#">V4</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-11</a></li>
-          
-            <li><a href="#">V1</a></li>
-          
-            <li><a href="#">V2</a></li>
-          
-            <li><a href="#">V3</a></li>
-          
-            <li><a href="#">V4</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Social Network app · Inheritance · Polymorphism · Overriding</p>
 </li>
-      
-        <li> <h1>Network-V1</h1>
+        
+          <li> <h1>Network-V1</h1>
 <p>In this step, you will familiarise yourself with the original version of the Network example (without inheritance).</p>
 <h2>Creating Network V1 Project</h2>
 <p>In IntelliJ, create a new project called Network-V1.</p>
@@ -409,8 +414,8 @@ order of input.</p>
 <h2>Solution</h2>
 <p>The solution to network-v1 is <a href="archives/network-solution-v1.zip">here</a>.</p>
 </li>
-      
-        <li> <h1>Network-V2</h1>
+        
+          <li> <h1>Network-V2</h1>
 <p>In this step, you will familiarise yourself with the second version of the Network example (with inheritance).  </p>
 <h2>Creating Network V2 Project</h2>
 <p>In IntelliJ, create a new project called Network-V2.</p>
@@ -447,8 +452,8 @@ order of input.</p>
 <h2>Solution</h2>
 <p>The solution to network-v2 is <a href="archives/network-solution-v2.zip">here</a>.</p>
 </li>
-      
-        <li> <h1>Network-V3</h1>
+        
+          <li> <h1>Network-V3</h1>
 <p>In this step, you will create version 3 of the Network system.  This version will have a menu that will control the NewsFeed class.</p>
 <h2>Creating Network V3 Project</h2>
 <p>In IntelliJ, create a new project called Network-V3.</p>
@@ -484,8 +489,8 @@ order of input.</p>
 <h2>Solution</h2>
 <p>The solution to network-v3 is <a href="archives/network-solution-v3.zip">here</a>.</p>
 </li>
-      
-        <li> <h1>Network-V4</h1>
+        
+          <li> <h1>Network-V4</h1>
 <p>In this step, you will build on v3 that you wrote in the previous step.</p>
 <h2>Creating the Network-V4 project</h2>
 <p>Create a new project called Network-V4 and copy the src files from <em>either</em> your solution to network-v3 <em>or</em> our solution of <a href="archives/Network-V3.zip">Network-V3</a> into it.</p>
@@ -501,8 +506,8 @@ order of input.</p>
 <h2>Solution</h2>
 <p>The solution is available <a href="archives/network-solution-v4.zip">here</a></p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <p>These exercises are based on the exercises in Chapter 8 of Objects First with Java - A Practical Introduction Using Bluej, by David Barnes &amp; Michael Kolling).</p>
 <h2>Exercise 1</h2>
 <p>Order the following items into an inheritance hierarchy : </p>
@@ -564,8 +569,8 @@ t1 = s1;
 s1 = phd1; 
 phd1 = s1;</code></pre>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <h2>Exercise 1 Solution</h2>
 <p>The question was...order the following items into an inheritance hierarchy : </p>
 <ul>
@@ -632,7 +637,26 @@ Student s1 = new Student ();</code></pre>
                // We are going against the direction of the arrows in the 
                // inheritance diagram.</code></pre>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

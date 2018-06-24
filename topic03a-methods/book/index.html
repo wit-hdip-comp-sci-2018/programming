@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,47 +330,49 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html">3a: Methods (Part 1) </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip>3a: Methods (Part 1) </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-03a</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+              <li><a href="#">Challenges</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-03a</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-            <li><a href="#">Challenges</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>methods · mouse event methods · bespoke methods</p>
 </li>
-      
-        <li> <h1>Understanding mouse event methods</h1>
+        
+          <li> <h1>Understanding mouse event methods</h1>
 <p>In this step, you will work on the processing example 3.1 from your lectures.</p>
 <h2>Coding the setup() method</h2>
 <p>Create a new Processing sketch and call it <strong>Example_3_1</strong>.</p>
@@ -458,8 +463,8 @@ Lab-12
     }
 }</code></pre>
 </li>
-      
-        <li> <h1>Mouse event methods</h1>
+        
+          <li> <h1>Mouse event methods</h1>
 <p>In last week&#39;s examples, 2.5 to 2.8 inclusive, we used the mouse system variables e.g. mousePressed. </p>
 <p>In this step, you will re-write that code to use mouse event methods instead e.g. void mousePressed(). </p>
 <p>You will notice, this time, that we haven&#39;t given you the reworked code to type in; have a go at making the code changes yourself and if you need some help, you can refer to your lecture notes (or download the solutions).  And don&#39;t worry if you have to refer to either the notes or the solutions, you are only three weeks into the course!</p>
@@ -548,8 +553,8 @@ void draw() {
 <p>Rework the code so that it no longer tests the mouse system variable but uses the mouse event methods instead.</p>
 <p>Run your code.  Does it work as you would expect?</p>
 </li>
-      
-        <li> <h1>Writing your own methods</h1>
+        
+          <li> <h1>Writing your own methods</h1>
 <p>In this step, you will work on reproducing the code examples 3.2 to 3.5 inclusive from your lectures.</p>
 <h2>Example 3.2</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_2</strong>.</p>
@@ -680,8 +685,8 @@ void drawRedSquare(int length, int xCoord, int yCoord)
 <p>Run your code.  Does it work as you would expect?  Are 6 red squares drawn on the display window?</p>
 <p>Now try re-write the for loop so that it is a while loop.  Run and test your code again.  There should be no changes in the display window.</p>
 </li>
-      
-        <li> <h1>Writing your own methods</h1>
+        
+          <li> <h1>Writing your own methods</h1>
 <p>In this step, you will work on reproducing the code example 3.6 from your lectures.</p>
 <h2>Example 3.6</h2>
 <p>Create a new Processing sketch in your workspace and call it <strong>Example_3_6</strong>.</p>
@@ -703,8 +708,8 @@ int timestwo(int val)
 <p>The <strong>timesTwo</strong> method takes in a parameter of type <strong>int</strong>, it multiplies the value of this parameter by 2 and then returns the value back to where the method was called from.  It stores the returned value in another variable of type <strong>int</strong> that is called <strong>result</strong>.  The value of the variable <strong>result</strong> is printed to the console.</p>
 <p>Run your code.  Does it work as you would expect?  Is the value 60 printed to the console?</p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <ul>
 <li><p>For each exercise listed below, create a new sketch.</p>
 </li>
@@ -724,8 +729,8 @@ int timestwo(int val)
 <p><img src="./img/07.png" alt="Expected output"></p>
 <p>Note that you can achieve this with just one extra line of code!</p>
 </li>
-      
-        <li> <h1>Challenges</h1>
+        
+          <li> <h1>Challenges</h1>
 <ul>
 <li>You may need to visit the <a href="https://processing.org/reference/">Processing website</a> for additional information.</li>
 </ul>
@@ -763,13 +768,32 @@ void draw()
 <h2>Challenge 2</h2>
 <p>Now that you have the code drawing a target with 3 circles, test it so that you can easily draw targets with 6 circles etc.  You should only need to change the actual paramter passed in the <strong>drawTarget</strong> method.  </p>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab03a_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

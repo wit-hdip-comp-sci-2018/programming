@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,53 +330,55 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> Induction </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> Induction </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Induction</a></li>
+            
+              <li><a href="#">Software</a></li>
+            
+              <li><a href="#">IntelliJ</a></li>
+            
+              <li><a href="#">01</a></li>
+            
+              <li><a href="#">02</a></li>
+            
+              <li><a href="#">03</a></li>
+            
+              <li><a href="#">04</a></li>
+            
+              <li><a href="#">05</a></li>
+            
+              <li><a href="#">06</a></li>
+            
+              <li><a href="#">Exercises</a></li>
+            
+              <li><a href="#">Solutions</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Induction</a></li>
-          
-            <li><a href="#">Software</a></li>
-          
-            <li><a href="#">IntelliJ</a></li>
-          
-            <li><a href="#">01</a></li>
-          
-            <li><a href="#">02</a></li>
-          
-            <li><a href="#">03</a></li>
-          
-            <li><a href="#">04</a></li>
-          
-            <li><a href="#">05</a></li>
-          
-            <li><a href="#">06</a></li>
-          
-            <li><a href="#">Exercises</a></li>
-          
-            <li><a href="#">Solutions</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>Processing · drawing basic shapes · verify IntelliJ setup</p>
 </li>
-      
-        <li> <h1>Installing the Module Software</h1>
+        
+          <li> <h1>Installing the Module Software</h1>
 <p>For this module, we need the following software packages:</p>
 <ul>
 <li>Processing Development Environment (PDE).  </li>
@@ -390,8 +395,8 @@ Lab-12
 </ul>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 </li>
-      
-        <li> <h1>Verifying IntelliJ Installation</h1>
+        
+          <li> <h1>Verifying IntelliJ Installation</h1>
 <ul>
 <li>We will start using IntelliJ in week 6/7.  </li>
 <li>The purpose of this step is to verify that IntelliJ installed correctly. </li>
@@ -427,8 +432,8 @@ Lab-12
 <p>If you are not getting this result, you should flag this to your instructor who can help resolve the issue.</p>
 <p>Once you have <strong>Hello World!</strong> printed to your console, you can exit the IntelliJ IDE.</p>
 </li>
-      
-        <li> <h1>Opening the PDE (Processing Development Environment)</h1>
+        
+          <li> <h1>Opening the PDE (Processing Development Environment)</h1>
 <p>Go to the directory/folder where you installed your processing app.  </p>
 <p>You should see a list of files and folders similiar to the image below:</p>
 <p><img src="./img/04.png" alt="Processing Development Environment files"></p>
@@ -436,8 +441,8 @@ Lab-12
 <p>The PDE (Processing Development Environment) should launch.</p>
 <p><img src="./img/05.png" alt="The Processing Development Environment"></p>
 </li>
-      
-        <li> <h1>Setting your Sketchbook location</h1>
+        
+          <li> <h1>Setting your Sketchbook location</h1>
 <ul>
 <li><p>As you work through the exercises in this course, you will create many new files.  These files are called Sketchbooks.</p>
 </li>
@@ -459,8 +464,8 @@ Lab-12
 </ul>
 <p><img src="./img/08.png" alt="Example of a Sketchbook containing previous work"></p>
 </li>
-      
-        <li> <h1>Drawing Simple Shapes</h1>
+        
+          <li> <h1>Drawing Simple Shapes</h1>
 <ul>
 <li>We will use the following built-in functions to draw simple shapes:<ul>
 <li>rect()</li>
@@ -510,8 +515,8 @@ Lab-12
 </ul>
 <p><img src="./img/13.png" alt="Rectangle and square"></p>
 </li>
-      
-        <li> <h1>Drawing Simple Shapes(contd.)</h1>
+        
+          <li> <h1>Drawing Simple Shapes(contd.)</h1>
 <ul>
 <li>Using rect(), line() and ellipse().</li>
 </ul>
@@ -537,8 +542,8 @@ Lab-12
 </ul>
 <p><img src="./img/15.png" alt="Drawing a line"></p>
 </li>
-      
-        <li> <h1>Drawing Simple Shapes(contd.)</h1>
+        
+          <li> <h1>Drawing Simple Shapes(contd.)</h1>
 <ul>
 <li>Using rect(), line() and ellipse().</li>
 </ul>
@@ -577,8 +582,8 @@ Lab-12
 </ul>
 <p><img src="./img/18.png" alt="Drawing a circle"></p>
 </li>
-      
-        <li> <h1>Changing the look of the display window</h1>
+        
+          <li> <h1>Changing the look of the display window</h1>
 <ul>
 <li>You should have the following code in your open sketchbook:</li>
 </ul>
@@ -636,8 +641,8 @@ Lab-12
 <h2>Saving your work</h2>
 <p>It is a good idea to save your work as you progress through your labs.  From the <strong>File</strong> menu (<strong>Processing</strong> on the Mac), select <strong>Save As..</strong>.  The folder location you chose earlier for storing your sketches should be displayed.  Save your sketch as something like <strong>lab00</strong>.  </p>
 </li>
-      
-        <li> <h1>Exercises</h1>
+        
+          <li> <h1>Exercises</h1>
 <ul>
 <li>These exercises are based on the functions we covered in the previous steps in this lab.</li>
 <li>For each exercise listed below, create a new sketchbook.</li>
@@ -657,13 +662,32 @@ Lab-12
 <li>Design your own picture, making sure to use combinations of Circles, Ovals, Squares, Rectanges and Lines.  </li>
 </ul>
 </li>
-      
-        <li> <h1>Solutions</h1>
+        
+          <li> <h1>Solutions</h1>
 <p>The solutions for this lab can be found <a href="archives/lab00_solutions.zip">here</a>. </p>
 <p>If you require unzipping software, 7zip is a good choice: <a href="http://www.7-zip.org/">http://www.7-zip.org/</a> (or Keka for Mac <a href="http://www.kekaosx.com/en/">http://www.kekaosx.com/en/</a>)</p>
 <p>After unzipping the solutions, it might be a good idea to copy the three folders to your <strong>sketchbook</strong> folder.  From Processing, you could then use <strong>File</strong>, followed by <strong>Sketchbook</strong> to easily open them.</p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>

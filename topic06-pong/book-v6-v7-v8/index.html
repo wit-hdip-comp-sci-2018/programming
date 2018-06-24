@@ -7,10 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/css/uikit.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.4/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
@@ -60,9 +62,10 @@ h3 {
 
 
   </style>
-<body>
 
-  
+  <body class="lab">
+
+    
   <div class="uk-offcanvas-content">
     <div id="offcanvas-usage" uk-offcanvas>
       <div class="uk-offcanvas-bar">
@@ -327,39 +330,41 @@ Lab-12
   </div>
 
 
-  <div uk-sticky>
-    <nav uk-navbar>
-      <div class="uk-navbar-left">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-          <li><a href="#offcanvas-usage" uk-icon="icon: menu", uk-toggle title="Switch Lab" pos="bottom" uk-tooltip></a></li>
-          <li class="uk-active"><a href="../index.html"> 6: Game of Pong </a></li>
-        </ul>
-      </div>
+    <div uk-sticky>
+      <nav class="uk-navbar">
+        <div class="uk-navbar-left">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
+            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
+                   uk-tooltip></a></li>
+            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
+                                     pos="bottom" uk-tooltip> 6: Game of Pong </a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
+              uk-switcher="connect: .switcher-container">
+            
+              <li><a href="#">Lab-06c</a></li>
+            
+              <li><a href="#">V6</a></li>
+            
+              <li><a href="#">V7</a></li>
+            
+              <li><a href="#">V8</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-
-      <div class="uk-navbar-right">
-        <ul class="uk-subnav uk-background-secondary uk-subnav-pill uk-subnav-divider" uk-switcher="connect: .switcher-container">
-          
-            <li><a href="#">Lab-06c</a></li>
-          
-            <li><a href="#">V6</a></li>
-          
-            <li><a href="#">V7</a></li>
-          
-            <li><a href="#">V8</a></li>
-          
-        </ul>
-      </div>
-    </nav>
-  </div>
-  <div class="uk-container uk-container-expand">
-    <ul class="uk-switcher switcher-container">
-      
-        <li> <h1>Objectives</h1>
+    <div class="uk-container uk-container-expand">
+      <ul class="uk-switcher switcher-container">
+        
+          <li> <h1>Objectives</h1>
 <p>PongGame V6.0 · PongGame V7.0 · PongGameV8.0</p>
 </li>
-      
-        <li> <h1>Game of Pong - V6.0</h1>
+        
+          <li> <h1>Game of Pong - V6.0</h1>
 <p>On completion of this lab you will have introduced an array of Players and build simple data analysis algorithms based on the stored data.  In this lab, you will work on PongGameV6.0, PongGame7.0 and PongGameV8.0.</p>
 <p>In Version 6 of the game, we introduce a new Player class. For this version, the Player class will have limited functionality. </p>
 <p>Open your latest version of PongGame version 5. If you want, you can use this solution <a href="archives/PongGameV5_0.zip">here</a>. </p>
@@ -493,8 +498,8 @@ void tournamentOver()
 <h2>Solution</h2>
 <p>If your code is not working, the solution can be found <a href="archives/PongGameV6_0.zip">here</a>. </p>
 </li>
-      
-        <li> <h1>Game of Pong - V7.0</h1>
+        
+          <li> <h1>Game of Pong - V7.0</h1>
 <p>In this version of the game, we add methods that calculate the highest and lowest score in the player&#39;s score array as well as calculating the average score over all the scores.</p>
 <p>Open your latest version of PongGame Version 7. If you are not confident that it is working, you can use this solution <a href="archives/PongGameV7_0.zip">here</a>. </p>
 <p>Save this as PongGameV8_0. Now, make changes to this work. </p>
@@ -577,8 +582,8 @@ void tournamentOver()
 <h2>Solution</h2>
 <p>If your code is not working, the solution can be found <a href="archives/PongGameV7_0.zip">here</a>.</p>
 </li>
-      
-        <li> <h1>Game of Pong - V8.0</h1>
+        
+          <li> <h1>Game of Pong - V8.0</h1>
 <p>In this version of the game, we add the JOptionPane methods that allow us to read data in from the keyboard and to send data out via dialog boxes. </p>
 <p>Because we can now use user input, we use this in two places:</p>
 <ul>
@@ -675,7 +680,26 @@ void tournamentOver()
 <h2>Solution</h2>
 <p>If your code is not working, the solution can be found <a href="archives/PongGameV8_0.zip">here</a>. </p>
 </li>
-      
-    </ul>
-  </div>
-</body>
+        
+      </ul>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+  const $images = $('.lab img');
+  jQuery.each($images, function(i) {
+    if ($images[i].alt.length > 0) {
+      const divImg = $(document.createElement('div')).addClass('');
+      $($images[i]).wrap(divImg);
+      const divLabel = $(document.createElement('div')).addClass(
+          'uk-label',
+      );
+      divLabel.append($images[i].alt);
+      $(divLabel).insertBefore($images[i]);
+    }
+  });
+});
+
+    </script>
+  </body>
+</html>
