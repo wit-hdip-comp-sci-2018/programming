@@ -1,23 +1,27 @@
-
-
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/css/uikit.min.css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.6/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+        type="text/css">
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+        rel="stylesheet"/>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
   <style>
     
 
@@ -63,315 +67,209 @@ h3 {
 
 
   </style>
+</head>
 
-  <body class="lab">
+<body>
 
+
+
+<div class="ui fixed top pointing inverted stackable menu labmenu">
+  <header class="header item">
+    <i id="toc" class="sitemap icon"></i>
     
-  <div class="uk-offcanvas-content">
-    <div id="offcanvas-usage" uk-offcanvas>
-      <div class="uk-offcanvas-bar">
-        <button class="uk-offcanvas-close" type="button" uk-close></button>
-        <ul class="uk-nav">
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Assignment-1
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Assignment-2
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Assignment 3
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Induction
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-1a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-1b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-02a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-02b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-03a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-03b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-04a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-04b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-05b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06c
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-06d
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-07b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-08a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-08b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-09a
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-09b
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Assignment 3 Prerequisite
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-10
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-11
-                </a>
-              </li>
-            
-          
-            
-              <li>
-                <a class="item" href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">
-  <i class="fas fa-flask " style="color:#00BCD4"> </i>
-Lab-12
-                </a>
-              </li>
-            
-          
-        </ul>
-      </div>
-    </div>
+      <a href="../index.html">  11: Inheritance and Polymorphism  </a>
+    
+  </header>
+  <div class="right tab-menu menu">
+    
+      <a class="item" data-tab="Lab-11">
+        Lab-11
+      </a>
+    
+      <a class="item" data-tab="V1">
+        V1
+      </a>
+    
+      <a class="item" data-tab="V2">
+        V2
+      </a>
+    
+      <a class="item" data-tab="V3">
+        V3
+      </a>
+    
+      <a class="item" data-tab="V4">
+        V4
+      </a>
+    
+      <a class="item" data-tab="Exercises">
+        Exercises
+      </a>
+    
+      <a class="item" data-tab="Solutions">
+        Solutions
+      </a>
+    
   </div>
+</div>
 
-
-    <div uk-sticky>
-      <nav class="uk-navbar">
-        <div class="uk-navbar-left">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill">
-            <li><a href="#offcanvas-usage" uk-icon="icon: menu" , uk-toggle title="Switch Lab" pos="bottom"
-                   uk-tooltip></a></li>
-            <li class="uk-active"><a href="../index.html" uk-icon="icon: chevron-up" uk-toggle title="Parent Topic"
-                                     pos="bottom" uk-tooltip> 11: Inheritance and Polymorphism </a></li>
-          </ul>
-        </div>
-        <div class="uk-navbar-right">
-          <ul class="uk-subnav uk-background-secondary uk-subnav-pill"
-              uk-switcher="connect: .switcher-container">
-            
-              <li><a href="#">Lab-11</a></li>
-            
-              <li><a href="#">V1</a></li>
-            
-              <li><a href="#">V2</a></li>
-            
-              <li><a href="#">V3</a></li>
-            
-              <li><a href="#">V4</a></li>
-            
-              <li><a href="#">Exercises</a></li>
-            
-              <li><a href="#">Solutions</a></li>
-            
-          </ul>
-        </div>
-      </nav>
-    </div>
-
-    <div class="uk-container uk-container-expand">
-      <ul class="uk-switcher switcher-container">
-        
-          <li> <h1>Objectives</h1>
+<div class="ui pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu">
+    <br><br>
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">Assignment-1 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">Assignment-2 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">Assignment 3 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">Induction </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">Lab-02b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">Lab-03a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">Lab-03b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">Lab-04a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">Lab-04b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">Lab-05a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">Lab-05b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">Lab-06a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">Lab-06b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">Lab-06c </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">Lab-06d </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">Lab-07a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">Lab-07b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">Lab-08a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">Lab-08b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">Lab-09a </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">Lab-09b </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">Assignment 3 Prerequisite </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">Lab-10 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">Lab-11 </a>
+      
+    
+      
+        <a class="item"
+           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">Lab-12 </a>
+      
+    
+  </div>
+  <div class="pusher" tabindex="-1">
+    <div class="ui basic segment">
+      <br>
+      
+        <div class="ui tab segment lab" data-tab="Lab-11">
+          <h1>Objectives</h1>
 <p>Social Network app · Inheritance · Polymorphism · Overriding</p>
-</li>
-        
-          <li> <h1>Network-V1</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="V1">
+          <h1>Network-V1</h1>
 <p>In this step, you will familiarise yourself with the original version of the Network example (without inheritance).</p>
 <h2>Creating Network V1 Project</h2>
 <p>In IntelliJ, create a new project called Network-V1.</p>
@@ -414,9 +312,11 @@ order of input.</p>
 </ul>
 <h2>Solution</h2>
 <p>The solution to network-v1 is <a href="archives/network-solution-v1.zip">here</a>.</p>
-</li>
-        
-          <li> <h1>Network-V2</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="V2">
+          <h1>Network-V2</h1>
 <p>In this step, you will familiarise yourself with the second version of the Network example (with inheritance).  </p>
 <h2>Creating Network V2 Project</h2>
 <p>In IntelliJ, create a new project called Network-V2.</p>
@@ -452,9 +352,11 @@ order of input.</p>
 <p>Note that all the details associated with each post are not displayed when we &quot;List all posts&quot;?  Why do you think details are missing?  Note:  we will fix this later in the lab.</p>
 <h2>Solution</h2>
 <p>The solution to network-v2 is <a href="archives/network-solution-v2.zip">here</a>.</p>
-</li>
-        
-          <li> <h1>Network-V3</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="V3">
+          <h1>Network-V3</h1>
 <p>In this step, you will create version 3 of the Network system.  This version will have a menu that will control the NewsFeed class.</p>
 <h2>Creating Network V3 Project</h2>
 <p>In IntelliJ, create a new project called Network-V3.</p>
@@ -489,9 +391,11 @@ order of input.</p>
 <p>Are all the details that we entered, displayed when we &quot;List all posts&quot;?  Why do you think details are missing?  Hint:  Investigate the code in Post, PhotoPost and MessagePost that displays the post.  <em>Note:  we will fix this is the next step.</em></p>
 <h2>Solution</h2>
 <p>The solution to network-v3 is <a href="archives/network-solution-v3.zip">here</a>.</p>
-</li>
-        
-          <li> <h1>Network-V4</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="V4">
+          <h1>Network-V4</h1>
 <p>In this step, you will build on v3 that you wrote in the previous step.</p>
 <h2>Creating the Network-V4 project</h2>
 <p>Create a new project called Network-V4 and copy the src files from <em>either</em> your solution to network-v3 <em>or</em> our solution of <a href="archives/Network-V3.zip">Network-V3</a> into it.</p>
@@ -506,9 +410,11 @@ order of input.</p>
 <p>Test your code again.  Are all details printed to the console?</p>
 <h2>Solution</h2>
 <p>The solution is available <a href="archives/network-solution-v4.zip">here</a></p>
-</li>
-        
-          <li> <h1>Exercises</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Exercises">
+          <h1>Exercises</h1>
 <p>These exercises are based on the exercises in Chapter 8 of Objects First with Java - A Practical Introduction Using Bluej, by David Barnes &amp; Michael Kolling).</p>
 <h2>Exercise 1</h2>
 <p>Order the following items into an inheritance hierarchy : </p>
@@ -569,9 +475,11 @@ p1 = s1;
 t1 = s1; 
 s1 = phd1; 
 phd1 = s1;</code></pre>
-</li>
-        
-          <li> <h1>Solutions</h1>
+
+        </div>
+      
+        <div class="ui tab segment lab" data-tab="Solutions">
+          <h1>Solutions</h1>
 <h2>Exercise 1 Solution</h2>
 <p>The question was...order the following items into an inheritance hierarchy : </p>
 <ul>
@@ -637,26 +545,67 @@ Student s1 = new Student ();</code></pre>
 <pre><code class="lang-java">phd1 = s1;   // However, this is NOT legal...a Student &quot;may not be&quot; a PhDStudent. 
                // We are going against the direction of the arrows in the 
                // inheritance diagram.</code></pre>
-</li>
-        
-      </ul>
-    </div>
 
-    <script>
-      $(document).ready(function() {
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('keydown', function(e) {
+  e = e || window.event;
+  var nextTab;
+  switch (e.which || e.keyCode) {
+    case 37: // left
+      nextTab = $('.tab-menu a[data-tab].active').prev('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').last();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+
+    case 39: // right
+      nextTab = $('.tab-menu a[data-tab].active').next('a[data-tab]');
+      if (!nextTab.length) nextTab = $('.tab-menu a[data-tab]').first();
+      nextTab.click();
+      $('.pusher').focus();
+      break;
+  }
+});
+
+  $(document).ready(function() {
+  $('img').addClass('ui image');
+
+  $('.ui.embed').embed();
+
   const $images = $('.lab img');
   jQuery.each($images, function(i) {
     if ($images[i].alt.length > 0) {
-      const divImg = $(document.createElement('div')).addClass('');
+      const divImg = $(document.createElement('div')).addClass(
+        'ui basic segment',
+      );
       $($images[i]).wrap(divImg);
-      const divLabel = $(document.createElement('div')).addClass('uk-label uk-text-lowercase');
+      const divLabel = $(document.createElement('div')).addClass(
+        'ui blue ribbon label',
+      );
       divLabel.append($images[i].alt);
-      $(divLabel).insertAfter($images[i]);
-      $('<br>').insertAfter($images[i]);
+      $(divLabel).insertBefore($images[i]);
     }
   });
+
+  $('.ui.menu .item').tab({
+    history: true,
+    historyType: 'hash',
+  });
+
+  $('.popup').popup();
+
+  $('.ui.sidebar')
+    .sidebar({ context: $('.pushable') })
+    .sidebar('setting', 'transition', 'slide out')
+    .sidebar('attach events', '#toc');
 });
 
-    </script>
-  </body>
+</script>
+</body>
 </html>
