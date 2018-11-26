@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
-        type="text/css">
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
-        rel="stylesheet"/>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
-  <script type="text/javascript"
-          src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <style>
-    
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.css"
+          type="text/css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css"
+          rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery.address/1.6/jquery.address.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.10/semantic.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/java.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <style>
+      
 
 body {
   font-family: "Open Sans", "Helvetica", "Helvetica Neue",  "Arial", sans-serif;
@@ -66,213 +66,241 @@ h3 {
 
 
 
-  </style>
-</head>
+      
 
-<body>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.footer {
+  background: white;
+  text-align: right;
+}
+.content {
+  flex: 1;
+  overflow: auto;
+}
 
 
 
-<div class="ui fixed top pointing inverted stackable menu labmenu">
-  <header class="header item">
-    <i id="toc" class="sitemap icon"></i>
-    
-      <a href="../index.html">  9: Menu Driven Apps and Persistence  </a>
-    
-  </header>
-  <div class="right tab-menu menu">
-    
-      <a class="item" data-tab="Assignment 3 Prerequisite">
-        Assignment 3 Prerequisite
-      </a>
-    
-      <a class="item" data-tab="Context">
-        Context
-      </a>
-    
-      <a class="item" data-tab="Setup">
-        Setup
-      </a>
-    
-      <a class="item" data-tab="Principles">
-        Principles
-      </a>
-    
-      <a class="item" data-tab="Test Execution">
-        Test Execution
-      </a>
-    
-      <a class="item" data-tab="Challenges">
-        Challenges
-      </a>
-    
+    </style>
+  </head>
+
+  <body class="uk-background-muted">
+    <div class="wrapper">
+      <div class="content">
+        <div style="height:1000px;">
+          
+  
+
+  <div class="ui fixed top pointing inverted stackable menu labmenu">
+    <header class="header item">
+      <i id="toc" class="sitemap icon"></i>
+      
+        <a href="../index.html">  9: Menu Driven Apps and Persistence  </a>
+      
+    </header>
+    <div class="right tab-menu menu">
+      
+        <a class="item" data-tab="Assignment 3 Prerequisite">
+          Assignment 3 Prerequisite
+        </a>
+      
+        <a class="item" data-tab="Context">
+          Context
+        </a>
+      
+        <a class="item" data-tab="Setup">
+          Setup
+        </a>
+      
+        <a class="item" data-tab="Principles">
+          Principles
+        </a>
+      
+        <a class="item" data-tab="Test Execution">
+          Test Execution
+        </a>
+      
+        <a class="item" data-tab="Challenges">
+          Challenges
+        </a>
+      
+    </div>
   </div>
-</div>
 
-<div class="ui pushable">
-  <div class="ui inverted labeled icon left inline vertical sidebar menu">
-    <br><br>
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">Assignment-1 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">Assignment-2 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">Assignment 3 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">Induction </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">Lab-02b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">Lab-03a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">Lab-03b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">Lab-04a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">Lab-04b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">Lab-05a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">Lab-05b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">Lab-06a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">Lab-06b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">Lab-06c </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">Lab-06d </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">Lab-07a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">Lab-07b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">Lab-08a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">Lab-08b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">Lab-09a </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">Lab-09b </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">Assignment 3 Prerequisite </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">Lab-10 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">Lab-11 </a>
-      
-    
-      
-        <a class="item"
-           href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">Lab-12 </a>
-      
-    
-  </div>
-  <div class="pusher" tabindex="-1">
-    <div class="ui basic segment">
-      <br>
-      
-        <div class="ui tab segment lab" data-tab="Assignment 3 Prerequisite">
-          <p>The material covered in this &#39;lab&#39; is a prerequisite for the third assignment in this module.</p>
 
-        </div>
+  
+
+  <div class="ui pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <br><br>
       
-        <div class="ui tab segment lab" data-tab="Context">
-          <h3>Context</h3>
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-1/index.html">Assignment-1 </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-2/index.html">Assignment-2 </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00a-assignments/book-assignment-3/index.html">Assignment 3 </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic00b-induction/book-induction/index.html">Induction </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01a-intro-to-processing/book-1a/index.html">Lab-1a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic01b-animate-your-drawings/book-1b/index.html">Lab-1b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02a-if-stmt-and-events/book/index.html">Lab-02a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic02b-iteration-for-while/book/index.html">Lab-02b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03a-methods/book/index.html">Lab-03a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic03b-more-on-methods/book/index.html">Lab-03b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04a-strings-and-intro-to-classes/book/index.html">Lab-04a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic04b-classes-encapsulation/book/index.html">Lab-04b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05a-swing-and-arrays/book/index.html">Lab-05a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic05b-arrays-and-classes/book/index.html">Lab-05b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v1-v2/index.html">Lab-06a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v3-v4-v5/index.html">Lab-06b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v6-v7-v8/index.html">Lab-06c </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic06-pong/book-v9/index.html">Lab-06d </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-a-setup-intellij/index.html">Lab-07a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic07-IntelliJ-JVM-and-IO/book-b/index.html">Lab-07b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-1/index.html">Lab-08a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic08-grouping-objects/book-2/index.html">Lab-08b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-1/index.html">Lab-09a </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-2/index.html">Lab-09b </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic09-menu-and-crud/book-3/index.html">Assignment 3 Prerequisite </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic10-persistence-xml-exceptions/book/index.html">Lab-10 </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic11-inher-polym/book/index.html">Lab-11 </a>
+        
+      
+        
+          <a class="item"
+             href="http://wit-hdip-comp-sci-2018.github.io/programming//topic12-collections-map-set/book/index.html">Lab-12 </a>
+        
+      
+    </div>
+    <div class="pusher" tabindex="-1">
+      <div class="ui basic segment">
+        <br>
+        
+          <div class="ui tab segment lab" data-tab="Assignment 3 Prerequisite">
+            <p>The material covered in this &#39;lab&#39; is a prerequisite for the third assignment in this module.</p>
+
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Context">
+            <h3>Context</h3>
 <p>Suppose you are part of a team developing a large application. You are given the specifications for a particular class from the overall application and asked to implement it. The specification details the fields and methods required. Each method&#39;s signature and objective are included, however, the class has no user interaction aspect. </p>
 <p>For example, suppose you were tasked with implementing the Store class (only) from the Shop application (covered in previous labs), but the Driver class was not part of the overall application. The problem is how do you know if your implementation works? You need to develop an associated piece of code that exercises your class. We call this code a <strong>unit test</strong>, where the application class is the &#39;unit&#39; being tested. Because this scenario arises frequently, special Java libraries have evolved specifically for developing and executing unit testing code (just like Processing evolved for developing and executing animations). <em>JUnit</em> is the most popular of these libraries. In a later nodule on this course you will practice writing unit tests. The purpose of this lab is to experience <strong>using</strong> test code given to you and being able to <strong>interpret</strong> what it tells you about the state of the application class being developed - is it behaving as specified.</p>
 <p>[ In the third assignment for this module unit tests will be provide for a class(s) that you will be required to implement - more details later.]</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Setup">
-          <h3>Setup instructions.</h3>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Setup">
+            <h3>Setup instructions.</h3>
 <p>Download and unzip <a href="./archives/start.zip">this archive</a>. It&#39;s an IntelliJ project containing the source code for the Shop application and supporting unit test code for the Store class. The project base folder is called <code>ShopWithTests</code>. To import it into your  IntelliJ environment, drop-down the <em>File</em> menu, select <em>Open ...</em>, as follows:</p>
 <p><img src="img/open.png" alt=""></p>
 <p>Navigate to the base folder (<code>ShopWithTests</code>) and click <em>Open</em>. </p>
@@ -282,10 +310,10 @@ h3 {
 <p><img src="img/run.png" alt=""></p>
 <p>The application should work as before. Briefly review the code to refresh your understanding of its workings. </p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Principles">
-          <h3>Test design principles.</h3>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Principles">
+            <h3>Test design principles.</h3>
 <p>The purpose of this lab is to enable you understand the <strong>output generated</strong> by the test code. The test code syntax can be completely ignored - you will cover this in a later module.</p>
 <p>In the <code>src/test</code> folder we typically have one unit test file per application class. The are a few exceptions to this guideline:</p>
 <ol>
@@ -341,10 +369,10 @@ h3 {
   THEN it should return the name of the third product</code></pre>
 <p>We will see evidence of this GIVEN-WHEN-THEN pattern in the output generated by the Store tests (next section).</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Test Execution">
-          <h3>Running the tests.</h3>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Test Execution">
+            <h3>Running the tests.</h3>
 <p>To run the Store tests follow the screen-shot below:</p>
 <p><img src="img/testrun.png" alt=""></p>
 <p>The output generated looks as follows (you may need to collapse some of the output branches, by double-clicking them, to see this exact output):</p>
@@ -365,10 +393,10 @@ h3 {
 <p>According to its specification, the <em>cheapestProduct)</em> method fails when the product name it returns is not the cheapest one in the array. How do we implement test code so that it knows what product name should be returned? The test code simply adds a set of products to the Store (via the add()method), calls <em>cheapestProduct)</em>, and then compares the method&#39;s <strong>actual</strong> response to what it <strong>expected</strong>. If they are different it registers the test scenario as a failure. The test code developer chooses the product details to add to the Store and knows what the method <strong>should return</strong>. The test code executer (you) doesn&#39;t really need to know the product details, only whether the test passed/failed.</p>
 <p>Undo the code change above to return to all the tests passing again.</p>
 
-        </div>
-      
-        <div class="ui tab segment lab" data-tab="Challenges">
-          <h3>Challenges.</h3>
+          </div>
+        
+          <div class="ui tab segment lab" data-tab="Challenges">
+            <h3>Challenges.</h3>
 <p>Often in a development team the person asked to implement some application code does NOT write the associated testing code. This safeguards against the app developer assuming their code will work and cutting corners when writing the tests to prove it.</p>
 <h4>Challenge 1.</h4>
 <p><strong>You are required</strong> to implement the following method specification for the Store class:</p>
@@ -409,14 +437,16 @@ h3 {
 <p>[The empty Store scenario is really the same as the second scenario above.]</p>
 <p>To prove your implementation is correct, run the test file <code>src/challenges/Challenge2Test</code>. All the test scenarios must pass.</p>
 
-        </div>
-      
+          </div>
+        
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  $(document).on('keydown', function(e) {
+
+
+  <script>
+    $(document).on('keydown', function(e) {
   e = e || window.event;
   var nextTab;
   switch (e.which || e.keyCode) {
@@ -436,7 +466,7 @@ h3 {
   }
 });
 
-  $(document).ready(function() {
+    $(document).ready(function() {
   $('img').addClass('ui image');
 
   $('.ui.embed').embed();
@@ -469,6 +499,16 @@ h3 {
     .sidebar('attach events', '#toc');
 });
 
-</script>
-</body>
+  </script>
+
+
+        </div>
+      </div>
+      <div class="footer"> <p> Powered by <a
+          href="https://github.com/edeleastar/tutors-ts">tutors-ts.</a>
+        Unless otherwise stated, this work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. </p>
+      </div>
+    </div>
+  </body>
+
 </html>
